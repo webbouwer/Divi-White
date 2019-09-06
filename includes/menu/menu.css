@@ -1,0 +1,154 @@
+/* Theme menu positioning */
+.menu li a
+{
+display: table;
+    width: 100%;
+}
+.menu-image-title-after
+{
+display: table;
+}
+.nav-item-box
+{
+display: table-row;
+}
+.menu-image-textwrap .menu-image
+{
+display:table-column;
+vertical-align: text-top;
+}
+.menu-image-textwrap span.menu-image-title
+{
+display:table-row;
+}
+.menu-image-textwrap span.menu-image-description
+{
+display:table-row;
+white-space:nowrap;
+}
+
+
+
+
+/** Start Menu_image (hover style)
+ * @package Menu_Image
+ * @version 2.6.4
+ * @licence GPLv2
+ * source: https://github.com/zviryatko/menu-image/blob/master/menu-image.css
+ * Author: Alex Davyskiba aka Zviryatko
+ */
+.text-before img.menu-image,
+.text-before .menu-image-hover-wrapper
+{
+float:right;
+}
+.text-after img.menu-image,
+.text-after .menu-image-hover-wrapper
+{
+float:left;
+}
+
+.menu-item a img {
+    border: none;
+    box-shadow: none;
+    vertical-align: middle;
+    width: auto;
+    display: inline;
+}
+
+
+.menu-item a.menu-image-hovered img.hovered-image,
+.menu-item a.menu-image-hovered:hover img.menu-image {
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out 0s;
+}
+.menu-item a.menu-image-hovered:hover img.hovered-image {
+    opacity: 1;
+}
+
+
+
+.menu-item a.menu-image-title-above,
+.menu-item a.menu-image-title-below {
+    text-align: center;
+}
+.menu-item a.menu-image-title-above.menu-image-not-hovered img,
+.menu-item a.menu-image-hovered.menu-image-title-above .menu-image-hover-wrapper {
+    display: block;
+    /*padding-top: 10px;*/
+    margin: 0 auto;
+}
+
+.menu-item a.menu-image-title-hide .menu-image-title {
+	display: none;
+}
+
+.menu-item a.menu-image-title-below.menu-image-not-hovered img,
+.menu-item a.menu-image-hovered.menu-image-title-below .menu-image-hover-wrapper {
+    display: block;
+    /*padding-bottom: 10px;*/
+    margin: 0 auto;
+}
+
+
+.menu-item a.menu-image-title-after.menu-image-not-hovered img,
+.menu-item a.menu-image-hovered.menu-image-title-after .menu-image-hover-wrapper {
+    /*padding-right: 5px;*/
+}
+.menu-item a.menu-image-title-before.menu-image-not-hovered img,
+.menu-item a.menu-image-hovered.menu-image-title-before .menu-image-hover-wrapper {
+    /*padding-left: 5px;*/
+}
+
+
+/**
+ * End Menu_image
+ */
+
+
+
+
+
+
+
+
+/* title text wrapper
+
+.menu-image-textwrap
+{
+white-space:nowrap;
+}
+.menu-image-description:before
+{
+content:'';
+display: table;
+}
+.menu-image-description
+{
+}
+
+.menu-image-textwrap .menu-image-title
+{
+white-space:nowrap;
+}
+.menu-image-textwrap .menu-image-description
+{
+white-space:nowrap;
+}
+
+.text-before .menu-image-title,
+.text-before .menu-image-description
+}
+
+.text-after .menu-image-title,
+.text-after .menu-image-description
+{
+}
+
+.text-before .menu-image-textwrap:after,
+.text-after .menu-image-textwrap:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+*/
