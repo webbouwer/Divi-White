@@ -6,5 +6,36 @@ Author: Webbouwer
 Author URI: https://webdesigndenhaag.net
 Description: Smart. Flexible. Beautiful and customized. Divi White is the customizable child theme for the most powerful theme created for Wordpress.
 Tags: responsive-layout,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar,custom-background,custom-colors,featured-images,full-width-template,post-formats,rtl-language-support,theme-options,threaded-comments,translation-ready
-Version: 0.1.1559910889
+Version: 0.1.2
 */
+
+/*
+http://astronautweb.co/snippet/font-awesome/
+https://divi-magazine.com/using-font-awesome-with-divi/
+*/
+
+
+.et-social-github a.icon:before {
+    content: "\f113"; /* fa-github-alt */
+    font-family: "FontAwesome" !important;
+}
+.et-social-youtube a.icon:before {
+    content: "\f16a"; /*  fa-youtube-play  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-tumblr a.icon:before {
+    content: "\f174"; /*  fa-tumblr-square  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-skype a.icon:before {
+    content: "\f17e"; /*  fa-fa-skype  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-vimeo a.icon:before {
+    content: "\f194"; /*  fa-vimeo-square  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-pinterest a.icon:before {
+    content: "\f0d3"; /*  fa-pinterest-square  */
+    font-family: "FontAwesome" !important;
+}
