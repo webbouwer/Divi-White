@@ -14,4 +14,13 @@ This wordpress child-theme is based on the Divi theme by Elegant themes and requ
    - Blog > sidebar: sidebar display on/off 
    - Footer elements: footer sticky on/off
  - Menu sections active on/off (simplyfied) 
-   Page section menu links are displayed active on scroll
+   - Page section menu links are displayed active on section scroll in view
+   
+ - Update 1.2: Extending divi social urls/icons (Font Awesome)
+    - linkedin
+    - github
+    - youtube
+    - tumblr 
+    - skype 
+    - vimeo
+    - pinterest

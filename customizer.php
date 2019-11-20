@@ -290,22 +290,25 @@ function DW_customize_adaptive(){
 
                 <?php if( get_theme_mod('et_divi_header_fixed_section_links', 0 ) == '1' ){ ?>
 
+				$(window).load(function(){
+                    setPageActiveMenuLink();
+                });
                 // Scroll Innit
 				$(window).scroll(function(){
                     setPageActiveMenuLink();
-                 });
+                });
                 $(window).onresize(function(){
                     setPageActiveMenuLink();
                  });
                 function setPageActiveMenuLink(){
                     var navlinks = $('#top-menu-nav ul li a');
-                    var sections = $('.et_pb_section');
+                    var sections = $('.et_pb_section');  //var rows = $('.et_pb_row');
                     var currentScrollPos = $(this).scrollTop();
 
                     var mh =  $('#main-header').height() + $('#top-header').height();
                       sections.each(function() {
                         var self = $(this);
-                        if (self.offset().top <= (currentScrollPos + mh + 50 ) && (currentScrollPos + mh ) <= (self.offset().top + self.outerHeight() + 50)) {
+                        if (self.offset().top <= (currentScrollPos + mh + (self.outerHeight()/10) ) && (currentScrollPos + mh ) <= (self.offset().top + self.outerHeight() + (self.outerHeight()/10) )) {
                             var targetName = '#'+self.attr('id');
                             navlinks.parent().removeClass('current-menu-item'); // 'current_page_item'
                             $('a[href$='+targetName+']').parent().addClass('current-menu-item');
@@ -317,6 +320,7 @@ function DW_customize_adaptive(){
                             $('#top-menu-nav ul li a').first().parent().addClass('current-menu-item');
                         }
                      });
+
                  }
 
                 <?php } ?>
