@@ -8,10 +8,10 @@ function DW_customize_adaptive_css(){
         ?>
 
         /* Set main top padding */
-        #page-container { padding-top:0px !important; }
-        #main-header, #main-header .container { padding-top:0px !important; top:0px !important; }
+        .home.page #page-container { padding-top:0px !important; }
+        .home.page #main-header, #main-header .container { padding-top:0px !important; top:0px !important; }
 
-        .et_pb_section:first{
+        .home.page .et_pb_section:first{
         }
 
         /* Set relative class */
