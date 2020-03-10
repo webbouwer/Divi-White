@@ -7,21 +7,27 @@ function DW_customize_adaptive_css(){
             if( ( get_theme_mod('et_divi_header_element_position_firstsection', 0 ) === true || get_theme_mod('et_divi_header_element_position_section_id', '' ) !== '' )  ){
         ?>
 
-        /* Set main top padding */
-        .home.page #page-container { padding-top:0px !important; }
-        .home.page #main-header, #main-header .container { padding-top:0px !important; top:0px !important; }
+            /* Set main top padding */
+            body.home  #main-header, body.home #main-header .container { padding-top:0px !important; top:0px !important; }
 
-        .home.page .et_pb_section:first{
-        }
+        @media (min-width: 981px) {
 
-        /* Set relative class */
-        .home.page #page-container header#main-header {
-            position:relative !important;
-        }
 
-        /* Set fixed class */
-        .home.page #page-container header#main-header.sticktotop {
-            position:fixed !important;
+            body.home #page-container { padding-top:0px !important; }
+
+            body.home  .et_pb_section:first{
+            }
+
+            /* Set relative class */
+            body.home  #page-container header#main-header {
+                position:relative !important;
+            }
+
+            /* Set fixed class */
+            body.home  #page-container header#main-header.sticktotop {
+                position:fixed !important;
+            }
+
         }
 
         <?php
