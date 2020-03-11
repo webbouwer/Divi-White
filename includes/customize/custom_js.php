@@ -7,7 +7,6 @@ function DW_customize_adaptive_js(){
 
             $(document).ready( function(){
 
-
                 <?php
                 /* move header below first section */
                 if( get_theme_mod('et_divi_header_element_position_firstsection', false ) === true ){
@@ -38,19 +37,18 @@ function DW_customize_adaptive_js(){
                     topAreaHeight = topAreaHeight + topFixHeight;
 
                     function header_relative(){
-
                         if( $(window).width() > 981 ){
-                        $('body.home #main-header').css({ 'margin-top': 0 } );
-                        $('body.home #main-header').removeClass('sticktotop');
-                        $('body.home .et_pb_section:first').css({ 'padding-top': targetAddPadding } );
+                            $('body.home #main-header').css({ 'margin-top': 0 } );
+                            $('body.home #main-header').removeClass('sticktotop');
+                            $('body.home .et_pb_section:first').css({ 'padding-top': targetAddPadding } );
                         }
                     }
 
                     function header_fixed(){
                         if( $(window).width() > 981 ){
-                        $('body.home #main-header').css({ 'margin-top': fullTopHeight  } );
-                        $('body.home #main-header').addClass('sticktotop');
-                        $('body.home .et_pb_section:first').css({ 'padding-top': $('body.home #main-header').outerHeight() } );
+                            $('body.home #main-header').css({ 'margin-top': fullTopHeight  } );
+                            $('body.home #main-header').addClass('sticktotop');
+                            $('body.home .et_pb_section:first').css({ 'padding-top': $('body.home #main-header').outerHeight() + fullTopHeight } );
                         }
                     }
 
@@ -58,22 +56,16 @@ function DW_customize_adaptive_js(){
 
 
                     if( $(window).width() > 981 ){
-
                         targetsection.css({ 'margin-top': topFixHeight });
                         $("body.home #main-header").css({ 'position': 'relative' }).insertAfter( targetsection );
-
                         $(window).bind('scroll', function() {
-
                             if ($(window).scrollTop() > topAreaHeight ) {
                                 header_fixed();
                             }else {
                                 header_relative();
                             }
-
                         });
-
                     }else{
-
                         <?php if( get_theme_mod('et_divi_mobile_menu_sticky', '1' ) == '1' ){ ?>
                         $("body.home #main-header").css({ 'position': 'fixed' }).insertBefore( targetsection );
                         $('body.home  #main-header').css({ 'margin-top': fullTopHeight } );
@@ -87,17 +79,13 @@ function DW_customize_adaptive_js(){
                         /*
                         // not wide screen
                         $('body.home #main-header').css({ 'margin-top': 0  } );
-
                         $("body.home #main-header").css({ 'position': 'relative' }).insertBefore( targetsection );
-
                         $('body.home #main-header').removeClass('sticktotop');
                         $('.home.page #page-container').css({ 'padding-top': topFixHeight } );
                         $('.et_pb_section:first').css({ 'padding-top': 0 } );
                         */
                     }
-
                 }
-
                 headerBelowSection();
 
                 <?php
