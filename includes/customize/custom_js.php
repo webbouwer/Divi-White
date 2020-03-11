@@ -34,7 +34,7 @@ function DW_customize_adaptive_js(){
                         fullTopHeight = topFixHeight + $('body.home #wpadminbar').outerHeight();
                     }
 
-                    var topAreaHeight = $('body.home .et_pb_section:first').outerHeight() - $('body.home #main-header').height();
+                    var topAreaHeight = $('body.home .et_pb_section:first').outerHeight() + topFixHeight;// - $('body.home #main-header').height() + topFixHeight;
                     topAreaHeight = topAreaHeight + topFixHeight;
 
                     function header_relative(){
