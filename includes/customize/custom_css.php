@@ -16,12 +16,12 @@ function DW_customize_adaptive_css(){
             body.home  #page-container header#main-header.belowtopsection {
                 position:relative !important;
             }
-
+            /*
                 body.home header#main-header.belowtopsection ul.sub-menu {
                     margin-top:-180%;
                     margin-left:-10px;
                 }
-
+            */
 
         <?php
             } // end first section
