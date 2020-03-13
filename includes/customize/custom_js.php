@@ -23,9 +23,9 @@ function DW_customize_adaptive_js(){
                         if ($('body.home #top-header').length > 0 ) {
                             topFixHeight = topFixHeight + $('body.home #top-header').outerHeight();
                         }
-                        var topSpacingHeight = 0;
+                        var adminbarHeight = 0;
                         if ($('body.home #wpadminbar').length > 0 ) {
-                            topSpacingHeight = $('body.home #wpadminbar').outerHeight();
+                            adminbarHeight = $('body.home #wpadminbar').outerHeight();
                         }
 
                         if( $(window).width() > 963 ){
@@ -37,11 +37,11 @@ function DW_customize_adaptive_js(){
 
 
                             $(window).bind('scroll', function() {
-                                if ($(window).scrollTop() > targetsectionheight + headerHeight + topSpacingHeight) {
+                                if ($(window).scrollTop() > targetsectionheight + headerHeight ) {
                                     $('body.home #page-container').css({ 'padding-top': 0 });
                                     targetsection.css({ 'padding-top': (headerHeight + topFixHeight) });
                                     $("body.home #main-header").insertBefore( targetsection );
-                                    $('body.home #main-header').css({ 'margin-top': topFixHeight + topSpacingHeight }).removeClass('belowtopsection');
+                                    $('body.home #main-header').css({ 'margin-top': topFixHeight + adminbarHeight }).removeClass('belowtopsection');
                                 }else{
                                     if( $(window).width() > 963 ){
                                         $('body.home #page-container').css({ 'padding-top': topFixHeight });
