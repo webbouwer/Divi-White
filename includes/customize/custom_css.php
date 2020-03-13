@@ -3,11 +3,32 @@ function DW_customize_adaptive_css(){
 ?>
 <style>
 
-        <?php  /* header below first section */
+        <?php  //header below first section
             if( ( get_theme_mod('et_divi_header_element_position_firstsection', 0 ) === true || get_theme_mod('et_divi_header_element_position_section_id', '' ) !== '' )  ){
         ?>
 
-            /* Set main top padding */
+            body.home  #main-header, body.home #main-header .container { padding-top:0px !important; top:0px !important; }
+
+            body.home  #page-container header#main-header {
+                /*position:fixed !important;*/
+            }
+
+            body.home  #page-container header#main-header.belowtopsection {
+                position:relative !important;
+            }
+
+                body.home header#main-header.belowtopsection ul.sub-menu {
+                    margin-top:-180%;
+                    margin-left:-10px;
+                }
+
+
+        <?php
+            } // end first section
+        ?>
+
+
+            /* Set main top padding
             body.home  #main-header, body.home #main-header .container { padding-top:0px !important; top:0px !important; }
 
         @media (min-width: 981px) {
@@ -18,21 +39,20 @@ function DW_customize_adaptive_css(){
             body.home  .et_pb_section:first{
             }
 
-            /* Set relative class */
+
             body.home  #page-container header#main-header {
                 position:relative !important;
             }
 
-            /* Set fixed class */
+
             body.home  #page-container header#main-header.sticktotop {
                 position:fixed !important;
             }
 
         }
+        */
 
-        <?php
-            } // end first section
-        ?>
+
 
         /* Fix centered logotop height */
         li.centered-inline-logo-wrap img#logo
