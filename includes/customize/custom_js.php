@@ -37,6 +37,9 @@ function DW_customize_adaptive_js(){
 
 
                             $(window).bind('scroll', function() {
+
+                                targetsectionheight = $('body.home .et_pb_section:first').height();
+                                headerHeight = $("body.home #main-header").outerHeight();
                                 if ($(window).scrollTop() > targetsectionheight + headerHeight ) {
                                     $('body.home #page-container').css({ 'padding-top': 0 });
                                     targetsection.css({ 'padding-top': (headerHeight + topFixHeight) });
