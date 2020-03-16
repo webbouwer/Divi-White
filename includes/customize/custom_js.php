@@ -8,6 +8,8 @@ function DW_customize_adaptive_js(){
              $(document).ready( function(){
 
                 <?php
+                $menuswitchwidth = get_theme_mod('et_divi_mobile_menu_breakpoint', 981 );
+
                 /* move header below first section */
                 if( get_theme_mod('et_divi_header_element_position_firstsection', false ) === true){
                 ?>
@@ -28,7 +30,7 @@ function DW_customize_adaptive_js(){
                             adminbarHeight = $('body.home #wpadminbar').outerHeight();
                         }
 
-                        if( $(window).width() > 963 ){
+                        if( $(window).width() > <?php echo $menuswitchwidth; ?> ){
 
                             $('body.home #page-container').css({ 'padding-top': topFixHeight });
                             targetsection.css({ 'padding-top': 0 });
@@ -46,7 +48,7 @@ function DW_customize_adaptive_js(){
                                     $("body.home #main-header").insertBefore( targetsection );
                                     $('body.home #main-header').css({ 'margin-top': topFixHeight + adminbarHeight }).removeClass('belowtopsection');
                                 }else{
-                                    if( $(window).width() > 963 ){
+                                    if( $(window).width() > <?php echo $menuswitchwidth; ?> ){
                                         $('body.home #page-container').css({ 'padding-top': topFixHeight });
                                         targetsection.css({ 'padding-top': 0 });
                                         $("body.home #main-header").insertAfter( targetsection );
@@ -92,7 +94,8 @@ function DW_customize_adaptive_js(){
                 });
                 $(window).onresize(function(){
                     setPageActiveMenuLink();
-                 });
+                });
+
                 function setPageActiveMenuLink(){
                     var navlinks = $('#top-menu-nav ul li a');
                     var sections = $('.et_pb_section');  //var rows = $('.et_pb_row');

@@ -3,6 +3,10 @@ function DW_customize_adaptive_css(){
 ?>
 <style>
 
+    <?php
+        $menuswitchwidth = 1028;
+    ?>
+
         <?php  //header below first section
             if( ( get_theme_mod('et_divi_header_element_position_firstsection', 0 ) === true || get_theme_mod('et_divi_header_element_position_section_id', '' ) !== '' )  ){
         ?>
@@ -80,10 +84,19 @@ function DW_customize_adaptive_css(){
         <?php } ?>
 
 
+
+        /* Setting the breakpoint of the mobile menu */
+        @media only screen and ( max-width: <?php echo $menuswitchwidth; ?>px ) {
+        #top-menu-nav, #top-menu {display: none;}
+        #et_top_search {display: none;}
+        #et_mobile_nav_menu {display: block;}
+        }
+
+
          /*
          * Size mobile menu
          */
-        @media (max-width: 980px) {
+        @media (max-width: <?php echo $menuswitchwidth; ?>px ) {
          .container.et_menu_container {
          width: calc( 100% - 60px);
          }
@@ -120,7 +133,7 @@ function DW_customize_adaptive_css(){
         #main-content .container:before {
             background: none;
         }
-        @media (min-width: 981px){
+        @media (min-width: <?php echo $menuswitchwidth; ?>px ){
             #left-area {
                 min-width: 100%;
                 width: 100%;
