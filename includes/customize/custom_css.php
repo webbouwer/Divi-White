@@ -4,17 +4,29 @@ function DW_customize_adaptive_css(){
 <style>
 
     <?php
-        $menuswitchwidth = 1028;
+        $menuswitchwidth = get_theme_mod('et_divi_mobile_menu_breakpoint', 981 ); //1028;
     ?>
 
         <?php  //header below first section
             if( ( get_theme_mod('et_divi_header_element_position_firstsection', 0 ) === true || get_theme_mod('et_divi_header_element_position_section_id', '' ) !== '' )  ){
         ?>
 
-            body.home  #main-header, body.home #main-header .container { padding-top:0px !important; top:0px !important; }
+            body.home  #main-header, body.home #main-header .container {
+                padding-top:0px !important; top:0px !important;
+                -webkit-transition: all 1s ease-in-out;
+                -moz-transition: all 1s ease-in-out;
+                -o-transition: all 1s ease-in-out;
+                transition: all 1s ease-in-out;
+            }
 
             body.home  #page-container header#main-header {
                 /*position:fixed !important;*/
+            }
+
+            /* test for fixed menu base css */
+            body.home  #page-container header#main-header ul > li > a {
+                /*position:fixed !important;*/
+                padding-bottom:0px;
             }
 
             body.home  #page-container header#main-header.belowtopsection {
@@ -58,11 +70,12 @@ function DW_customize_adaptive_css(){
 
 
 
-        /* Fix centered logotop height */
+        /* Fix centered logotop height
         li.centered-inline-logo-wrap img#logo
         {
             margin-top:-64px;
         }
+        */
 
         <?php if( get_theme_mod('et_divi_header_secondary_display', '1' ) != '1' ){ ?>
         /* remove header secondary menubar */
@@ -114,7 +127,7 @@ function DW_customize_adaptive_css(){
          * Make mobile menu sticky
          */
         <?php if( get_theme_mod('et_divi_mobile_menu_sticky', '1' ) == '1' ){ ?>
-        @media (max-width: 980px) {
+        @media (max-width: <?php echo $menuswitchwidth; ?>px ) {
         .et_non_fixed_nav.et_transparent_nav #main-header, .et_non_fixed_nav.et_transparent_nav #top-header, .et_fixed_nav #main-header, .et_fixed_nav #top-header {
             position: fixed;
         }
