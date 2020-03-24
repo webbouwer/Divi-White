@@ -8,11 +8,12 @@ function DW_customize_adaptive_css(){
     ?>
 
         <?php  //header below first section
-            if( ( get_theme_mod('et_divi_header_element_position_firstsection', 0 ) === true || get_theme_mod('et_divi_header_element_position_section_id', '' ) !== '' )  ){
+            if( get_theme_mod('et_divi_header_element_position_firstsection', 0 ) === true  ){
         ?>
 
             body.home  #main-header, body.home #main-header .container {
-                padding-top:0px !important; top:0px !important;
+                padding-top:0px !important;
+                top:0px !important;
                 -webkit-transition: all 1s ease-in-out;
                 -moz-transition: all 1s ease-in-out;
                 -o-transition: all 1s ease-in-out;
@@ -38,6 +39,18 @@ function DW_customize_adaptive_css(){
                     margin-left:-10px;
                 }
             */
+
+
+            body.home li.centered-inline-logo-wrap img#logo
+            {
+                vertical-align:text-top;
+                margin-top:auto;
+                margin-bottom:-33px;
+            }
+            body.home .et-fixed-header li.centered-inline-logo-wrap img#logo
+            {
+                margin-top:-15%;
+            }
 
         <?php
             } // end first section
