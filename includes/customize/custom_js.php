@@ -7,11 +7,12 @@ function DW_customize_adaptive_js(){
 
              $(document).ready( function(){
 
-                /* Divi centered logo */
+                /* Divi centered logo
                 $('#top-menu li.centered-inline-logo-wrap').addClass('menu-item');
                 $('#top-menu li.centered-inline-logo-wrap .logo_container').addClass('nav-item-box');
                 $('#top-menu li.centered-inline-logo-wrap .logo_container a').addClass('menu-image-textwrap');
                 $('#top-menu li.centered-inline-logo-wrap .logo_container a img#logo').addClass('menu-image');
+                */
 
                 <?php
                 $menuswitchwidth = get_theme_mod('et_divi_mobile_menu_breakpoint', 981 );

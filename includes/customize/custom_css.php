@@ -41,47 +41,118 @@ function DW_customize_adaptive_css(){
             */
 
 
-            body.home li.centered-inline-logo-wrap img#logo
-            {
-                vertical-align:text-top;
-                margin-top:auto;
-                margin-bottom:-33px;
-            }
-            body.home .et-fixed-header li.centered-inline-logo-wrap img#logo
-            {
-                margin-top:-15%;
-            }
 
         <?php
             } // end first section
         ?>
 
 
-            /* Set main top padding
-            body.home  #main-header, body.home #main-header .container { padding-top:0px !important; top:0px !important; }
 
-        @media (min-width: 981px) {
+    body.home li.centered-inline-logo-wrap
+    {
+        display: inline-block;
+        vertical-align: bottom;
+        margin-bottom:-80px;
+        margin-top:-40px;
+
+    }
+
+    body.home li.centered-inline-logo-wrap .logo_container
+    {
+        padding-bottom:0px !important;
+    }
+    body.home li.centered-inline-logo-wrap .logo_container a {
+    }
+    body.home li.centered-inline-logo-wrap .logo_container #logo {
+        padding-bottom:0px !important;
+    }
 
 
-            body.home #page-container { padding-top:0px !important; }
+
+    body.home #main-header:not(.et-fixed-header) li.centered-inline-logo-wrap{
+    }
+    body.home .et-fixed-header li.centered-inline-logo-wrap  {
+        display: inline-block;
+        vertical-align: bottom;
+        padding-top:0px !important;
+        padding-bottom:0px !important;
+    }
+    body.home .et-fixed-header li.centered-inline-logo-wrap .logo_container a {
+        position:relative;
+    }
+    body.home  .et-fixed-header li.centered-inline-logo-wrap .logo_container #logo {
+        margin-bottom:-10px;
+        margin-top:-55px;
+        max-width:120%;
+    }
+
+
+    /*
+    body.home li.centered-inline-logo-wrap .logo_container
+    {
+        display: block;
+        vertical-align: middle;
+    }
+    body.home .et-fixed-header li.centered-inline-logo-wrap .logo_container {
+    }
+    body.home li.centered-inline-logo-wrap .logo_container #logo {
+        background-color:red;
+    }
+    body.home  .et-fixed-header li.centered-inline-logo-wrap .logo_container #logo {
+        background-color:green;
+    }
+    */
+
+    /*
+    body.home li.centered-inline-logo-wrap .logo_container
+    {
+        vertical-align:text-top;
+        margin-top:0;
+        margin-bottom:0;
+        background-color:red;
+    }
+
+    body.home .et-fixed-header li.centered-inline-logo-wrap
+    {
+        margin:-33px 0;
+        -webkit-transition:all .4s ease-in-out;
+        transition:all .4s ease-in-out;
+        height:100%;
+    }
+    body.home .et-fixed-header li.centered-inline-logo-wrap .logo_container
+    {
+        margin-top:0;
+        margin-bottom:0;
+        background-color:green;
+    }
+
+    body.home .et-fixed-header li.centered-inline-logo-wrap .logo_container img#logo
+    {
+        margin-top:0;
+        margin-bottom:0;
+    }
+    */
+
+    /* Set main top padding
+    body.home  #main-header, body.home #main-header .container
+    {
+    padding-top:0px !important; top:0px !important;
+    }
+
+    @media (min-width: 981px) {
+
+    body.home #page-container { padding-top:0px !important; }
 
             body.home  .et_pb_section:first{
             }
-
-
             body.home  #page-container header#main-header {
                 position:relative !important;
             }
-
-
             body.home  #page-container header#main-header.sticktotop {
                 position:fixed !important;
             }
-
         }
         */
-
-
 
         /* Fix centered logotop height
         li.centered-inline-logo-wrap img#logo
@@ -98,7 +169,6 @@ function DW_customize_adaptive_css(){
         }
         <?php } ?>
 
-
         <?php if( get_theme_mod('et_divi_header_bottomshadow_display', '1' ) != '1' ){ ?>
         /* remove header bottom shadow  */
         header#main-header.et-fixed-header, #main-header
@@ -108,8 +178,6 @@ function DW_customize_adaptive_css(){
             box-shadow:none !important;
         }
         <?php } ?>
-
-
 
         /* Setting the breakpoint of the mobile menu */
         @media only screen and ( max-width: <?php echo $menuswitchwidth; ?>px ) {
