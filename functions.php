@@ -59,17 +59,33 @@ add_action( 'wp_enqueue_scripts', 'DW_parent_css', 10 );
 
 
 // Start customize
+add_action('admin_menu', 'DW_basic_add_theme_menu_info');
+
 function DW_basic_add_theme_menu_info()
 {
 	add_menu_page('Dive White Child Theme Panel', 'Divi White', 'manage_options', 'dw-theme-panel', 'DW_basic_theme_info', null, 99999);
     // https://shibashake.com/wordpress-theme/add_menu_page-add_submenu_page#add-menu
     // https://codex.wordpress.org/Creating_Options_Pages
-
+    // theme options
+    add_action( 'admin_init', 'DW_register_theme_settings' );
 }
-add_action('admin_menu', 'DW_basic_add_theme_menu_info');
+
+// Adding theme options
+function DW_register_theme_settings() {
+
+	//register our options
+    $optionname = 'use_menu_images';
+	if( !get_option( $optionname ) ){
+        add_option('use_menu_images', 0 );
+    }
+}
+
 
 function DW_basic_theme_info()
 {
+
+
+
      global $title;
     ?>
 	    <div class='wrap'>
@@ -77,6 +93,22 @@ function DW_basic_theme_info()
             <p>
             <img width="400" height="auto" src="<?php echo get_stylesheet_directory_uri('stylesheet_directory')."/images/screenshot_divi_white.png"; ?>" />
             </p>
+            <?php /*
+            <form method="post" action="admin.php?page=dw-theme-panel">
+                <table class="form-table">
+                    <tr valign="top">
+                    <th scope="row">Use theme native menu image</th>
+                    <td><input type="checkbox" name="use_menu_images" value="<?php echo get_option( $optionname ) ?>" /></td>
+                    </tr>
+                </table>
+
+                <?php submit_button(); ?>
+
+            </form>
+
+            <hr />
+            */ ?>
+
             <h3>Divi White and DiviPack</h3>
             <p>DiviPack is a Wordpress code bundle including the commercial Divi Theme made by <a target="blank" href="https://www.elegantthemes.com/gallery/divi">Elegant Themes</a>.</p>
             <p>DiviPack includes the Divi White child theme to provide an easy to use library with 175+ recommended free plugins to choose and install directly in Wordpress.</p>
@@ -84,9 +116,17 @@ function DW_basic_theme_info()
              | <a target="blank" href="https://github.com/webbouwer/Divi-White/archive/stable.zip">download Divi-White/archive/stable.zip</a></p>
             <p>Plugin library is made with the <a target="blank" href="http://tgmpluginactivation.com">tgm plugin activation class</a></p>
             <p>Menu_Image original source <a target="blank" href="https://github.com/zviryatko/menu-image/blob/master/menu-image.php">github.com/zviryatko</a></p>
+
+
+        <?php
+            //global $options;
+            //print_r( $options );
+        ?>
 		</div>
 	<?php
 }
+
+
 
 /* extending social links/icons */
 // source: https://diviextended.com/how-to-add-extra-social-media-icons-in-divi/
