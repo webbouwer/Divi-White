@@ -74,6 +74,25 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
+    // set mobile menu breakpoint
+    $wp_customize->add_setting( 'et_divi_mobile_menu_breakpoint', array(
+        'default'    => 981
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'et_divi_mobile_menu_breakpoint',
+            array(
+                'label'       => __( 'Responsive breakpoint', $themename ),
+                'description' => __( 'Max. width for mobile menu display', $themename ),
+                'section'   => 'et_divi_general_layout',
+                'settings'  => 'et_divi_mobile_menu_breakpoint',
+                'type'      => 'text',
+            )
+        )
+    );
+
+
     // set mobile menu sticky et_divi_mobile_menu
     $wp_customize->add_setting( 'et_divi_mobile_menu_sticky', array(
         'default'    => 1
