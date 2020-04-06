@@ -25,6 +25,9 @@
 	</script>
 
 	<?php wp_head(); ?>
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous"> -->
 </head>
 <body <?php body_class(); ?>>
 <?php
@@ -155,6 +158,14 @@
 							get_search_query(),
 							esc_attr__( 'Search for:', 'Divi' )
 						);
+
+                    /**
+                     * Fires inside the search form element, just before its closing tag.
+                     *
+                     * @since ??
+                     */
+                    do_action( 'et_search_form_fields' );
+
 					?>
 					<button type="submit" id="searchsubmit_header"></button>
 				</form>
@@ -318,6 +329,14 @@
 							get_search_query(),
 							esc_attr__( 'Search for:', 'Divi' )
 						);
+
+                    /**
+                     * Fires inside the search form element, just before its closing tag.
+                     *
+                     * @since ??
+                     */
+                    do_action( 'et_search_form_fields' );
+
 					?>
 					</form>
 					<span class="et_close_search_field"></span>

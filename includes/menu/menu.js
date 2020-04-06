@@ -55,6 +55,8 @@ Author URI: http://makeyoulivebetter.org.ua/
 				var item_id = $(this).parents('.field-image').siblings('input.menu-item-data-db-id').val();
 				menuImageUpdate( item_id, -1, $(this).hasClass('hover-image') );
 			});
+
+
 	});
 })(jQuery);
 /**
