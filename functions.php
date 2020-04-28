@@ -20,8 +20,11 @@ require_once('includes/builder/functions-tgm-plugin-activation.php');
 
 
 // more info! // : https://developer.wordpress.org/themes/advanced-topics/child-themes/
-require_once( get_stylesheet_directory(). '/includes/menu/menu.php' ); // menu image plugin functions <?php
 require_once( get_stylesheet_directory(). '/customizer.php' ); // customizer functions
+
+if( get_option( 'dw_implement_menu_images' ) == 1 ){
+    require_once( get_stylesheet_directory(). '/includes/menu/menu.php' ); // menu image plugin functions <?php
+}
 
 /* Future jquery
  * including migration lib
@@ -59,6 +62,7 @@ add_action( 'wp_enqueue_scripts', 'DW_parent_css', 10 );
 
 
 // Start customize
+
 function DW_basic_add_theme_menu_info()
 {
 	add_menu_page('Dive White Child Theme Panel', 'Divi White', 'manage_options', 'dw-theme-panel', 'DW_basic_theme_info', null, 99999);
@@ -67,6 +71,99 @@ function DW_basic_add_theme_menu_info()
 
 }
 add_action('admin_menu', 'DW_basic_add_theme_menu_info');
+function DW_basic_theme_info()
+{
+?>
+    <div class="wrap">
+    <h1>Custom Theme Options Page</h1>
+    <form method="post" action="options.php">
+    <?php
+    // display settings field on theme-option page
+    settings_fields("dw-theme-panel-grp");
+    // display all sections for theme-options page
+    do_settings_sections("dw-theme-panel");
+    submit_button();
+    ?>
+    </form>
+    </div>
+<?php
+}
+
+
+function dw_section_description_implement(){
+echo '<p>Theme Option Section</p>';
+}
+function dw_section_options_callback(){
+$options = get_option( 'dw_implement_menu_images' );
+    echo '<input name="dw_implement_menu_images" id="dw_implement_menu_images" type="checkbox" value="1" class="code" ' . checked( 1, $options, false ) . ' />';
+
+    echo 'enable images and descriptions inside menu options <br/> (if incompatible with other menu plugins turn this off)';
+}
+
+function dw_theme_settings(){
+add_option('dw_implement_menu_images',1);// add theme option to database
+add_settings_section( 'dw_first_section', 'Divi White Theme Options', 'dw_section_description_implement', 'dw-theme-panel');
+add_settings_field( 'dw_implement_menu_images', 'Implement menu images','dw_section_options_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the “first_section”
+register_setting( 'dw-theme-panel-grp', 'dw_implement_menu_images');
+}
+add_action('admin_init','dw_theme_settings');
+
+
+/*
+
+
+function theme_option_page() {
+?>
+<div class="wrap">
+<h1>Custom Theme Options Page</h1>
+<form method="post" action="options.php">
+<?php
+// display settings field on theme-option page
+settings_fields("theme-options-grp");
+// display all sections for theme-options page
+do_settings_sections("theme-options");
+submit_button();
+?>
+</form>
+</div>
+<?php
+}
+
+function add_theme_menu_item() {
+add_theme_page("Theme Customization", "Theme Customization", "manage_options", "theme-options", "theme_option_page", null, 99);
+}
+add_action("admin_menu", "add_theme_menu_item");
+
+function theme_section_description(){
+echo '<p>Theme Option Section</p>';}
+function options_callback(){
+$options = get_option( 'first_field_option' );
+echo '<input name="first_field_option" id="first_field_option" type="checkbox" value="1" class="code" ' . checked( 1, $options, false ) . ' /> Check for enabling custom help text.';
+}
+function test_theme_settings(){
+add_option('first_field_option',1);// add theme option to database
+add_settings_section( 'first_section', 'New Theme Options Section',
+'theme_section_description','theme-options');
+add_settings_field('first_field_option','Test Settings Field','options_callback',
+'theme-options','first_section');//add settings field to the “first_section”
+register_setting( 'theme-options-grp', 'first_field_option');
+}
+add_action('admin_init','test_theme_settings');
+
+
+//-----
+
+function DW_basic_add_theme_menu_info()
+{
+	add_menu_page('Dive White Child Theme Panel', 'Divi White', 'manage_options', 'dw-theme-panel', 'DW_basic_theme_info', null, 99999);
+    // https://shibashake.com/wordpress-theme/add_menu_page-add_submenu_page#add-menu
+    // https://codex.wordpress.org/Creating_Options_Pages
+
+}
+add_action('admin_menu', 'DW_basic_add_theme_menu_info');
+function dw_theme_panel_title(){
+echo '<p>Divi White Settings</p>';
+}
 
 function DW_basic_theme_info()
 {
@@ -74,6 +171,19 @@ function DW_basic_theme_info()
     ?>
 	    <div class='wrap'>
 	    <h1>Divi White - <?php echo $title;?></h1>
+
+            <div class="wrap">
+<h1>Custom Theme Options Page</h1>
+<form method="post" action="options.php">
+<?php
+    settings_fields("dw-theme-panel-grp");
+
+    do_settings_sections("dw-theme-panel");
+    submit_button();
+?>
+</form>
+</div>
+
             <p>
             <img width="400" height="auto" src="<?php echo get_stylesheet_directory_uri('stylesheet_directory')."/images/screenshot_divi_white.png"; ?>" />
             </p>
@@ -87,6 +197,28 @@ function DW_basic_theme_info()
 		</div>
 	<?php
 }
+
+
+function dw_theme_options_callback(){
+$options = get_option( 'DW_implement_section_menuimages_opt' );
+echo '<input name="DW_implement_section_menuimages_opt" id="DW_implement_section_menuimages_opt" type="checkbox" value="1" class="code" ' . checked( 1, $options, false ) . ' /> Enable menu images';
+}
+
+//admin-init hook to create settings section with title “New Theme Options Section”.
+function DW_theme_settings(){
+add_option('DW_implement_section_menuimages_opt',1);// add theme option to database
+add_settings_section( 'DW_implement_section', 'Divi White code implementation',
+'dw_theme_panel_title','dw-theme-panel');
+
+add_settings_field('DW_implement_section_menuimages_opt','Use Menu images','dw_theme_options_callback',
+'dw-theme-panel','implement_section');//add settings field to the “first_section”
+register_setting( 'dw-theme-panel-grp', 'DW_implement_section_menuimages_opt');
+}
+add_action('admin_init','DW_theme_settings');
+
+*/
+
+
 
 /* extending social links/icons */
 // source: https://diviextended.com/how-to-add-extra-social-media-icons-in-divi/
