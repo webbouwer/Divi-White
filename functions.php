@@ -1,6 +1,4 @@
 <?php
-
-
 // https://herowp.com/auto-install-install-plugins-wordpress-themes/
 // https://www.sitepoint.com/create-a-wordpress-theme-settings-page-with-the-settings-api/
 // https://wpreset.com/programmatically-automatically-download-install-activate-wordpress-plugins/
@@ -170,4 +168,3 @@ if ( ! function_exists( 'et_load_core_options' ) ) {
     add_action( 'init', 'et_load_core_options', 999 );
 
 }
-
