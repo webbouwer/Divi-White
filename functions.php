@@ -20,8 +20,11 @@ require_once('includes/builder/functions-tgm-plugin-activation.php');
 
 
 // more info! // : https://developer.wordpress.org/themes/advanced-topics/child-themes/
-require_once( get_stylesheet_directory(). '/includes/menu/menu.php' ); // menu image plugin functions <?php
 require_once( get_stylesheet_directory(). '/customizer.php' ); // customizer functions
+
+if( get_option( 'dw_implement_menu_images' ) == 1 ){
+    require_once( get_stylesheet_directory(). '/includes/menu/menu.php' ); // menu image plugin functions <?php
+}
 
 /* Future jquery
  * including migration lib
@@ -58,7 +61,14 @@ endif;
 add_action( 'wp_enqueue_scripts', 'DW_parent_css', 10 );
 
 
+
+
+
 // Start customize
+
+
+
+// Build theme option menu page
 function DW_basic_add_theme_menu_info()
 {
 	add_menu_page('Dive White Child Theme Panel', 'Divi White', 'manage_options', 'dw-theme-panel', 'DW_basic_theme_info', null, 99999);
@@ -70,23 +80,41 @@ add_action('admin_menu', 'DW_basic_add_theme_menu_info');
 
 function DW_basic_theme_info()
 {
-     global $title;
+?>
+    <div class="wrap">
+    <h1>Custom Theme Options Page</h1>
+    <form method="post" action="options.php">
+    <?php
+    // display settings field on theme-option page
+    settings_fields("dw-theme-panel-grp");
+    // display all sections for theme-options page
+    do_settings_sections("dw-theme-panel");
+    submit_button();
     ?>
-	    <div class='wrap'>
-	    <h1>Divi White - <?php echo $title;?></h1>
-            <p>
-            <img width="400" height="auto" src="<?php echo get_stylesheet_directory_uri('stylesheet_directory')."/images/screenshot_divi_white.png"; ?>" />
-            </p>
-            <h3>Divi White and DiviPack</h3>
-            <p>DiviPack is a Wordpress code bundle including the commercial Divi Theme made by <a target="blank" href="https://www.elegantthemes.com/gallery/divi">Elegant Themes</a>.</p>
-            <p>DiviPack includes the Divi White child theme to provide an easy to use library with 175+ recommended free plugins to choose and install directly in Wordpress.</p>
-            <p>Divi White is made by <a target="blank" href="https://github.com/webbouwer">Webbouwer</a> at <a target="blank" href="https://www.webdesigndenhaag.net">Webdesign Den Haag</a>
-             | <a target="blank" href="https://github.com/webbouwer/Divi-White/archive/stable.zip">download Divi-White/archive/stable.zip</a></p>
-            <p>Plugin library is made with the <a target="blank" href="http://tgmpluginactivation.com">tgm plugin activation class</a></p>
-            <p>Menu_Image original source <a target="blank" href="https://github.com/zviryatko/menu-image/blob/master/menu-image.php">github.com/zviryatko</a></p>
-		</div>
-	<?php
+    </form>
+    </div>
+<?php
 }
+
+function dw_section_description_implement(){
+echo '<p>Theme Option Section</p>';
+}
+
+function dw_section_options_callback(){
+$options = get_option( 'dw_implement_menu_images' );
+    echo '<input name="dw_implement_menu_images" id="dw_implement_menu_images" type="checkbox" value="1" class="code" ' . checked( 1, $options, false ) . ' />';
+    echo '(turn this off if incompatible with other menu plugins )';
+}
+
+function dw_theme_settings(){
+    add_option('dw_implement_menu_images',1);// add theme option to database
+    add_settings_section( 'dw_first_section', 'Divi White Theme Options', 'dw_section_description_implement', 'dw-theme-panel');
+    add_settings_field( 'dw_implement_menu_images', 'Enable menu images and descriptions','dw_section_options_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the “first_section”
+    register_setting( 'dw-theme-panel-grp', 'dw_implement_menu_images');
+}
+add_action('admin_init','dw_theme_settings');
+
+
 
 /* extending social links/icons */
 // source: https://diviextended.com/how-to-add-extra-social-media-icons-in-divi/
