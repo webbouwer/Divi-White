@@ -43,6 +43,7 @@ white-space:nowrap;
 
 
 
+
 /** Start Menu_image (hover style)
  * @package Menu_Image
  * @version 2.6.4
@@ -188,3 +189,70 @@ white-space:nowrap;
     clear: both;
 }
 */
+
+li.centered-inline-logo-wrap
+{
+    display: inline-block;
+}
+li.centered-inline-logo-wrap .logo_container
+{
+    display: table-cell;
+vertical-align:text-middle;
+}
+
+
+li.centered-inline-logo-wrap img#logo
+{
+    vertical-align:text-middle;
+    margin-top:-25%;
+    margin-bottom:-33px;
+}
+.et-fixed-header li.centered-inline-logo-wrap img#logo
+{
+    vertical-align:text-middle;
+    margin-top:-70%;
+    margin-bottom:0px;
+}
+
+
+/*
+li.centered-inline-logo-wrap img#logo
+{
+margin-top:-120%;
+margin-bottom:0px;
+}
+
+.et-fixed-header li.centered-inline-logo-wrap img#logo
+{
+margin-top:0px;
+}
+
+.centered-inline-logo-wrap .logo_container .logo_helper
+{
+}
+.centered-inline-logo-wrap .logo_container a
+{
+   display: table;
+    margin-top:-100%;
+}
+li.centered-inline-logo-wrap .logo_container a img#logo
+{
+display:table-column;
+vertical-align: text-top;
+}*/
+
+
+
+/*
+li.centered-inline-logo-wrap,
+li.centered-inline-logo-wrap .logo_container{
+
+    display: inline;
+    vertical-align: text-top;
+}
+
+
+
+
+
+
