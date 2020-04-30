@@ -153,62 +153,6 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
-    /* Custom panels
-    // add panels
-    $wp_customize->add_panel('DW_elements', array(
-        'title'    => __('DW Elements', $themename ),
-        'priority' => 2,
-    ));
-
-    // add sections
-    $wp_customize->add_section('DW_elements_header', array(
-        'title'    => __('Header', $themename ),
-        'panel'  => 'DW_elements',
-		'priority' => 20,
-    ));
-    $wp_customize->add_section('DW_elements_sidebar', array(
-        'title'    => __('Sidebar', $themename ),
-        'panel'  => 'DW_elements',
-		'priority' => 20,
-    ));
-
-    // header add options
-    $wp_customize->add_setting( 'DW_elements_header_secondary_display' , array(
-		'default' => 'hide',
-		'sanitize_callback' => 'DW_sanitize_default',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'DW_elements_header_secondary_display', array(
-            	'label'          => __( 'Display Secondary bar', $themename ),
-            	'section'        => 'DW_elements_header',
-            	'settings'       => 'DW_elements_header_secondary_display',
-            	'type'           => 'select',
- 	    		'description'    => __( 'Select the secondary menu bar display.', $themename ),
-            	'choices'        => array(
-                	'hide'   => __( 'hide', $themename ),
-                	'show'   => __( 'show', $themename ),
-            	)
-    )));
-
-    // sidebar add options
-    $wp_customize->add_setting( 'DW_elements_sidebar_display' , array(
-		'default' => 'right',
-		'sanitize_callback' => 'DW_sanitize_default',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'DW_elements_sidebar_display', array(
-            	'label'          => __( 'Sidebar position', $themename ),
-            	'section'        => 'DW_elements_sidebar',
-            	'settings'       => 'DW_elements_sidebar_display',
-            	'type'           => 'select',
- 	    		'description'    => __( 'Select the default sidebar position.', $themename ),
-            	'choices'        => array(
-                	'hide'   => __( 'hidden', $themename ),
-                	'left'   => __( 'left', $themename ),
-            		'right'   => __( 'right', $themename ),
-            	)
-    )));
-    */
-
-
 
 }
 add_action( 'customize_register', 'DW_theme_customizer' );
@@ -257,13 +201,16 @@ function DW_customize_adaptive(){
                 position:relative !important;
             }
 
+            body.home header#main-header.belowtopsection ul.sub-menu {
+                    position: absolute;
+                    bottom:40px;
+                    /*opacity: 1 !important;
+                    -webkit-transition: none !important;
+                    -moz-transition: none !important;
+                    -o-transition: none !important;
+                    transition: none !important;*/
+            }
 
-            /*
-                body.home header#main-header.belowtopsection ul.sub-menu {
-                    margin-top:-180%;
-                    margin-left:-10px;
-                }
-            */
 
 
 
