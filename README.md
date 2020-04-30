@@ -26,5 +26,5 @@ This wordpress child-theme is based on the Divi theme by Elegant themes and requ
    
  - Extending divi social urls/icons 
    (originally only facebook, google+, twitter, instagram, rss)
-   - + linkedin, github, steam, reddit, digg, twitch, youtube, tumblr, skype, vimeo, pinterest, jsfiddle, CodePen, Bitbucket 
+   - linkedin, github, steam, reddit, digg, twitch, youtube, tumblr, skype, vimeo, pinterest, jsfiddle, CodePen, Bitbucket 
 
