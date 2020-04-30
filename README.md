@@ -5,9 +5,13 @@ This wordpress child-theme is based on the Divi theme by Elegant themes and requ
 
  - Plugin install list
    - [x] Plugin collection: A list of selected plugins available for direct install. 
-   
+
+ - Theme option
+    - [x] Disable the default gravatar icon (if no profile pictures needed)
+    - [x] Enable menu images/decription: icon/image and description in regular menu options
+    
  - Menu
-   - [x] primairy menu images: optional icon/image and description in regular menu options
+   - [x] Page section menu links are displayed active on section scroll in view
    
  - Customizer
    - [x] secondary menu bar: display on/off 
@@ -20,35 +24,7 @@ This wordpress child-theme is based on the Divi theme by Elegant themes and requ
  - Footer 
    - [x] Footer elements: footer sticky on/off
    
- - Menu section anchor links active on/off (simplyfied) 
-   - [x] Page section menu links are displayed active on section scroll in view
-   
- - Update 1.2: Extending divi social urls/icons 
- (originally only facebook, google+, twitter, instagram, rss)
-    - [x] linkedin
-    - [x] github
-    - [ ] whatsapp
-    - [ ] discord
-    - [ ] tiktok 
-    - [ ] snapchat
-    - [x] steam
-    - [x] reddit 
-    - [x] digg
-    - [x] twitch
-    - [x] youtube
-    - [x] tumblr 
-    - [x] skype 
-    - [x] vimeo
-    - [x] pinterest
-    - [ ] flickr
-    - [ ] xbox
-    - [x] jsfiddle
-    - [x] CodePen
-    - [ ] CodeShare
-    - [ ] JSBin
-    - [x] Bitbucket 
-    
-    - [ ] MeWe
-    - [ ] Dribbble
-    
-    
+ - Extending divi social urls/icons 
+   (originally only facebook, google+, twitter, instagram, rss)
+   - + linkedin, github, steam, reddit, digg, twitch, youtube, tumblr, skype, vimeo, pinterest, jsfiddle, CodePen, Bitbucket 
+
