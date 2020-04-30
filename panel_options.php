@@ -20,7 +20,7 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Github Icon. ", $themename ) ),
-
+/*
     array( "name" => esc_html__( "Show Whatsapp Icon", $themename ),
            "id" => $shortname."_show_whatsapp_icon",
            "type" => "checkbox",
@@ -44,7 +44,7 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Snapchat Icon. ", $themename ) ),
-
+*/
     array( "name" => esc_html__( "Show Steam Icon", $themename ),
            "id" => $shortname."_show_steam_icon",
            "type" => "checkbox",
@@ -83,6 +83,12 @@ $enable_options = array (
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Tumblr Icon. ", $themename ) ),
 
+    array( "name" => esc_html__( "Show Dribbble Icon", $themename ),
+           "id" => $shortname."_show_dribbble_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Dribbble Icon. ", $themename ) ),
+
 
     array( "name" => esc_html__( "Show Skype Icon", $themename ),
            "id" => $shortname."_show_skype_icon",
@@ -107,13 +113,13 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Flickr Icon. ", $themename ) ),
-
+/*
     array( "name" => esc_html__( "Show Xbox Icon", $themename ),
            "id" => $shortname."_show_xbox_icon",
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Xbox Icon. ", $themename ) ),
-
+*/
     array( "name" => esc_html__( "Show JSFiddle Icon", $themename ),
            "id" => $shortname."_show_jsfiddle_icon",
            "type" => "checkbox",
@@ -125,7 +131,7 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the CodePen Icon. ", $themename ) ),
-
+/*
      array( "name" => esc_html__( "Show Codeshare Icon", $themename ),
            "id" => $shortname."_show_codeshare_icon",
            "type" => "checkbox",
@@ -137,7 +143,7 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the JS Bin Icon. ", $themename ) ),
-
+       */
      array( "name" => esc_html__( "Show Bitbucket Icon", $themename ),
            "id" => $shortname."_show_bitbucket_icon",
            "type" => "checkbox",
@@ -171,7 +177,7 @@ $value_options = array (
            "type" => "text",
            "validation_type" => "url",
 		   "desc" => esc_html__( "Enter the URL of your Github Profile. ", $themename ) ),
-
+/*
      array( "name" => esc_html__( "Whatsapp Profile Url", $themename ),
            "id" => $shortname."_whatsapp_url",
            "std" => "#",
@@ -199,7 +205,7 @@ $value_options = array (
            "type" => "text",
            "validation_type" => "url",
 		   "desc" => esc_html__( "Enter the URL of your Snapchat Profile or channel invitation. ", $themename ) ),
-
+*/
      array( "name" => esc_html__( "Steam Profile Url", $themename ),
            "id" => $shortname."_steam_url",
            "std" => "#",
@@ -242,6 +248,13 @@ $value_options = array (
            "validation_type" => "url",
 		   "desc" => esc_html__( "Enter the URL of your Tumblr Profile. ", $themename ) ),
 
+    array( "name" => esc_html__( "Dribbble Profile Url", $themename ),
+           "id" => $shortname."_dribbble_url",
+           "std" => "#",
+           "type" => "text",
+           "validation_type" => "url",
+		   "desc" => esc_html__( "Enter the URL of your Dribbble Profile. ", $themename ) ),
+
     array( "name" => esc_html__( "Skype Profile Url", $themename ),
            "id" => $shortname."_skype_url",
            "std" => "#",
@@ -269,14 +282,14 @@ $value_options = array (
            "type" => "text",
            "validation_type" => "url",
 		   "desc" => esc_html__( "Enter the URL of your FLickr profile or channel. ", $themename ) ),
-
+/*
      array( "name" => esc_html__( "Xbox Profile Url", $themename ),
            "id" => $shortname."_xbox_url",
            "std" => "#",
            "type" => "text",
            "validation_type" => "url",
 		   "desc" => esc_html__( "Enter the URL of your Xbox Profile or channel invitation. ", $themename ) ),
-
+*/
      array( "name" => esc_html__( "JSFiddle Profile Url", $themename ),
            "id" => $shortname."_jsfiddle_url",
            "std" => "#",
@@ -290,7 +303,7 @@ $value_options = array (
            "type" => "text",
            "validation_type" => "url",
 		   "desc" => esc_html__( "Enter the URL of your CodePen profile or code. ", $themename ) ),
-
+/*
      array( "name" => esc_html__( "Codeshare Profile Url", $themename ),
            "id" => $shortname."_codeshare_url",
            "std" => "#",
@@ -304,7 +317,7 @@ $value_options = array (
            "type" => "text",
            "validation_type" => "url",
 		   "desc" => esc_html__( "Enter the URL of your JS Bin profile or code. ", $themename ) ),
-
+*/
      array( "name" => esc_html__( "Bitbucket Profile Url", $themename ),
            "id" => $shortname."_bitbucket_url",
            "std" => "#",

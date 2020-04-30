@@ -1,5 +1,16 @@
 <ul class="et-social-icons">
 
+
+<?php // original facebook
+    if ( 'on' === et_get_option( 'divi_show_facebook_icon', 'on' ) ) : ?>
+	<li class="et-social-icon et-social-facebook">
+		<a href="<?php echo esc_url( et_get_option( 'divi_facebook_url', '#' ) ); ?>" class="icon">
+			<span><?php esc_html_e( 'Facebook', 'Divi' ); ?></span>
+		</a>
+	</li>
+<?php endif; ?>
+
+
 <?php /* new linkedin icon */
     if ( 'on' === et_get_option( 'divi_show_linkedin_icon', 'on' ) ) : ?>
 	<li class="et-social-icon et-social-linkedin">
@@ -8,15 +19,6 @@
 		</a>
 	</li>
 <?php endif; ?>
-
-<?php if ( 'on' === et_get_option( 'divi_show_facebook_icon', 'on' ) ) : ?>
-	<li class="et-social-icon et-social-facebook">
-		<a href="<?php echo esc_url( et_get_option( 'divi_facebook_url', '#' ) ); ?>" class="icon">
-			<span><?php esc_html_e( 'Facebook', 'Divi' ); ?></span>
-		</a>
-	</li>
-<?php endif; ?>
-
 
 <?php /* new github icon */
     if ( 'on' === et_get_option( 'divi_show_github_icon', 'on' ) ) : ?>
@@ -116,6 +118,16 @@
 		</a>
 	</li>
 <?php endif; ?>
+
+    <?php /* new dribble icon */
+    if ( 'on' === et_get_option( 'divi_show_dribbble_icon', 'on' ) ) : ?>
+	<li class="et-social-icon et-social-dribbble">
+		<a href="<?php echo esc_url( et_get_option( 'divi_dribbble_url', '#' ) ); ?>" class="icon">
+			<span><?php esc_html_e( 'Dribbble', 'Divi' ); ?></span>
+		</a>
+	</li>
+<?php endif; ?>
+
 
 <?php /* new skype icon */
     if ( 'on' === et_get_option( 'divi_show_skype_icon', 'on' ) ) : ?>

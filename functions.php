@@ -100,17 +100,35 @@ function dw_section_description_implement(){
 echo '<p>Theme Option Section</p>';
 }
 
-function dw_section_options_callback(){
-$options = get_option( 'dw_implement_menu_images' );
+function dw_section_menu_images_callback(){
+
+    $options = get_option( 'dw_implement_menu_images' );
     echo '<input name="dw_implement_menu_images" id="dw_implement_menu_images" type="checkbox" value="1" class="code" ' . checked( 1, $options, false ) . ' />';
     echo '(turn this off if incompatible with other menu plugins )';
+
+
+}
+
+function dw_section_disable_gravatar_callback(){
+
+
+    $options = get_option( 'dw_disable_gravatar_code' );
+    echo '<input name="dw_disable_gravatar_code" id="dw_disable_gravatar_code" type="checkbox" value="1" class="code" ' . checked( 1 , $options, false ) . ' />';
+    echo '( turn this on if Gravatar code is bugging your site )';
+
 }
 
 function dw_theme_settings(){
-    add_option('dw_implement_menu_images',1);// add theme option to database
+
     add_settings_section( 'dw_first_section', 'Divi White Theme Options', 'dw_section_description_implement', 'dw-theme-panel');
-    add_settings_field( 'dw_implement_menu_images', 'Enable menu images and descriptions','dw_section_options_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the “first_section”
+
+    add_option('dw_implement_menu_images',1);// add theme option to database
+    add_settings_field( 'dw_implement_menu_images', 'Enable menu images and descriptions','dw_section_menu_images_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the
     register_setting( 'dw-theme-panel-grp', 'dw_implement_menu_images');
+
+    add_option('dw_disable_gravatar_code',1);// add theme option to database
+    add_settings_field( 'dw_disable_gravatar_code', 'Disable Gravatar code','dw_section_disable_gravatar_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the “first_section”
+    register_setting( 'dw-theme-panel-grp', 'dw_disable_gravatar_code');
 }
 add_action('admin_init','dw_theme_settings');
 
@@ -171,3 +189,36 @@ if ( ! function_exists( 'et_load_core_options' ) ) {
 
 }
 
+
+
+if( get_option( 'dw_disable_gravatar_code' ) == 1 ){
+
+/*
+ * control (remove) gravatar
+ */
+
+function bp_remove_gravatar ($image, $params, $item_id, $avatar_dir, $css_id, $html_width, $html_height, $avatar_folder_url, $avatar_folder_dir) {
+	$default = home_url().'/wp-includes/images/smilies/icon_cool.gif'; // get_stylesheet_directory_uri() .'/images/avatar.png';
+	if( $image && strpos( $image, "gravatar.com" ) ){
+		return '<img src="' . $default . '" alt="avatar" class="avatar" ' . $html_width . $html_height . ' />';
+	} else {
+		return $image;
+	}
+}
+add_filter('bp_core_fetch_avatar', 'bp_remove_gravatar', 1, 9 );
+function remove_gravatar ($avatar, $id_or_email, $size, $default, $alt) {
+	$default = home_url().'/wp-includes/images/smilies/icon_cool.gif'; // get_stylesheet_directory_uri() .'/images/avatar.png';
+	return "<img alt='{$alt}' src='{$default}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+}
+add_filter('get_avatar', 'remove_gravatar', 1, 5);
+function bp_remove_signup_gravatar ($image) {
+	$default = home_url().'/wp-includes/images/smilies/icon_cool.gif'; //get_stylesheet_directory_uri() .'/images/avatar.png';
+	if( $image && strpos( $image, "gravatar.com" ) ){
+		return '<img src="' . $default . '" alt="avatar" class="avatar" width="60" height="60" />';
+	} else {
+		return $image;
+	}
+}
+add_filter('bp_get_signup_avatar', 'bp_remove_signup_gravatar', 1, 1 );
+
+}
