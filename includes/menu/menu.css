@@ -1,31 +1,45 @@
-/* Theme menu positioning */
+/* Theme menu positioning
 .menu li a
 {
 display: table;
     width: 100%;
 }
-.menu-image-title-after
-{
-display: table;
-}
-.nav-item-box
+li.menu-item .nav-item-box
 {
 display: table-row;
 }
-.menu-image-textwrap .menu-image
+li.menu-item .menu-image-title-after
+{
+display: table;
+}
+*/
+
+/*
+.centered-inline-logo-wrap #logo
+{
+    display: initial;
+    float: none;
+    vertical-align: middle;
+}
+*/
+
+
+li.menu-item .menu-image-textwrap .menu-image
 {
 display:table-column;
 vertical-align: text-top;
 }
-.menu-image-textwrap span.menu-image-title
+
+li.menu-item .menu-image-textwrap span.menu-image-title
 {
 display:table-row;
 }
-.menu-image-textwrap span.menu-image-description
+li.menu-item .menu-image-textwrap span.menu-image-description
 {
 display:table-row;
 white-space:nowrap;
 }
+
 
 
 
@@ -37,18 +51,18 @@ white-space:nowrap;
  * source: https://github.com/zviryatko/menu-image/blob/master/menu-image.css
  * Author: Alex Davyskiba aka Zviryatko
  */
-.text-before img.menu-image,
-.text-before .menu-image-hover-wrapper
+li.menu-item .text-before img.menu-image,
+li.menu-item .text-before .menu-image-hover-wrapper
 {
 float:right;
 }
-.text-after img.menu-image,
-.text-after .menu-image-hover-wrapper
+li.menu-item .text-after img.menu-image,
+li.menu-item .text-after .menu-image-hover-wrapper
 {
 float:left;
 }
 
-.menu-item a img {
+li.menu-item a img {
     border: none;
     box-shadow: none;
     vertical-align: middle;
@@ -56,47 +70,70 @@ float:left;
     display: inline;
 }
 
+.menu-image-description
+{
+    font-weight:normal !important;
+    font-size:0.7em !important;
+    line-height: 2em !important;
+}
 
-.menu-item a.menu-image-hovered img.hovered-image,
-.menu-item a.menu-image-hovered:hover img.menu-image {
+
+li.menu-item a.menu-image-hovered img.hovered-image,
+li.menu-item a.menu-image-hovered:hover img.menu-image {
     opacity: 0;
     transition: opacity 0.25s ease-in-out 0s;
 }
-.menu-item a.menu-image-hovered:hover img.hovered-image {
+li.menu-item a.menu-image-hovered:hover img.hovered-image {
     opacity: 1;
 }
 
 
+span.menu-image-textwrap.text-after,
+span.menu-image-textwrap.text-before
+{
+text-align: left;
+}
+span.menu-image-textwrap.text-after img.menu-image-title-after
+{
+margin-top:-5px;
+margin-right:5px;
+}
+span.menu-image-textwrap.text-before img.menu-image-title-before
+{
+margin-top:-5px;
+margin-left:5px;
+}
 
-.menu-item a.menu-image-title-above,
-.menu-item a.menu-image-title-below {
+
+li.menu-item a.menu-image-title-above,
+li.menu-item a.menu-image-title-below {
     text-align: center;
 }
-.menu-item a.menu-image-title-above.menu-image-not-hovered img,
-.menu-item a.menu-image-hovered.menu-image-title-above .menu-image-hover-wrapper {
+li.menu-item a.menu-image-title-above.menu-image-not-hovered img.menu-image,
+li.menu-item a.menu-image-hovered.menu-image-title-above .menu-image-hover-wrapper {
     display: block;
     /*padding-top: 10px;*/
     margin: 0 auto;
 }
 
-.menu-item a.menu-image-title-hide .menu-image-title {
+li.menu-item a.menu-image-title-hide .menu-image-title {
 	display: none;
 }
 
-.menu-item a.menu-image-title-below.menu-image-not-hovered img,
-.menu-item a.menu-image-hovered.menu-image-title-below .menu-image-hover-wrapper {
+li.menu-item a.menu-image-title-below.menu-image-not-hovered img.menu-image,
+li.menu-item a.menu-image-hovered.menu-image-title-below .menu-image-hover-wrapper {
     display: block;
     /*padding-bottom: 10px;*/
     margin: 0 auto;
 }
 
 
-.menu-item a.menu-image-title-after.menu-image-not-hovered img,
-.menu-item a.menu-image-hovered.menu-image-title-after .menu-image-hover-wrapper {
+li.menu-item a.menu-image-title-after.menu-image-not-hovered img.menu-image,
+li.menu-item a.menu-image-hovered.menu-image-title-after .menu-image-hover-wrapper {
     /*padding-right: 5px;*/
 }
-.menu-item a.menu-image-title-before.menu-image-not-hovered img,
-.menu-item a.menu-image-hovered.menu-image-title-before .menu-image-hover-wrapper {
+li.menu-item a.menu-image-title-before.menu-image-not-hovered img,
+li.menu-item a.menu-image-hovered.menu-image-title-before .menu-image-hover-wrapper {
     /*padding-left: 5px;*/
 }
 
@@ -152,3 +189,70 @@ white-space:nowrap;
     clear: both;
 }
 */
+
+li.centered-inline-logo-wrap
+{
+    display: inline-block;
+}
+li.centered-inline-logo-wrap .logo_container
+{
+    display: table-cell;
+vertical-align:text-middle;
+}
+
+
+li.centered-inline-logo-wrap img#logo
+{
+    vertical-align:text-middle;
+    margin-top:-25%;
+    margin-bottom:-33px;
+}
+.et-fixed-header li.centered-inline-logo-wrap img#logo
+{
+    vertical-align:text-middle;
+    margin-top:-70%;
+    margin-bottom:0px;
+}
+
+
+/*
+li.centered-inline-logo-wrap img#logo
+{
+margin-top:-120%;
+margin-bottom:0px;
+}
+
+.et-fixed-header li.centered-inline-logo-wrap img#logo
+{
+margin-top:0px;
+}
+
+.centered-inline-logo-wrap .logo_container .logo_helper
+{
+}
+.centered-inline-logo-wrap .logo_container a
+{
+   display: table;
+    margin-top:-100%;
+}
+li.centered-inline-logo-wrap .logo_container a img#logo
+{
+display:table-column;
+vertical-align: text-top;
+}*/
+
+
+
+/*
+li.centered-inline-logo-wrap,
+li.centered-inline-logo-wrap .logo_container{
+
+    display: inline;
+    vertical-align: text-top;
+}
+
+
+
+
+
+
