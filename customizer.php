@@ -26,6 +26,24 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
+        // header primary submenu horizontal
+        $wp_customize->add_setting( 'et_divi_header_primary_submenu_horizontal', array(
+            'default'    => 0
+        ) );
+        $wp_customize->add_control(
+            new WP_Customize_Control(
+                $wp_customize,
+                'et_divi_header_primary_submenu_horizontal',
+                array(
+                    'label'          => __( 'Horizontal Submenu', $themename ),
+                    'section'   => 'et_divi_header_primary',
+                    'settings'  => 'et_divi_header_primary_submenu_horizontal',
+                    'type'      => 'checkbox',
+                )
+            )
+        );
+
+
     // header secondary display
     $wp_customize->add_setting( 'et_divi_header_secondary_display', array(
         'default'    => 1
@@ -220,6 +238,30 @@ function DW_customize_adaptive(){
 
 
 
+        <?php if( get_theme_mod('et_divi_header_primary_submenu_horizontal', '0' ) != '0' ){ ?>
+            /* primary menu sub levels horizontal */
+            .nav li ul {
+                visibility: hidden;
+                z-index: 9999;
+                position: fixed;
+                width: 100vw;
+                left: 0;
+                padding: 0;
+                text-align: center !important;
+                border-top: 2px solid <?php get_theme_mod('et_divi_primary_nav_dropdown_line_color', 'transparent'); ?>;
+                background-color: <?php get_theme_mod('et_divi_header_primary_nav_dropdown_bg', 'transparent'); ?>;
+                box-shadow: none;
+            }
+            .nav li.et-reverse-direction-nav li ul {
+                right: 0;
+                top: auto;
+                /* background: #bae1fc; */
+            }
+            #top-menu li li a {
+                width: 100%;
+                color: <?php get_theme_mod('et_divi-primary_nav_dropdown_link_color', 'black'); ?>;
+            }
+        <?php } ?>
 
 
 
