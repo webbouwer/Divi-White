@@ -6,9 +6,7 @@ Author: Webbouwer
 Author URI: https://webdesigndenhaag.net
 Description: Smart. Flexible. Beautiful and customized. Divi White is the customizable child theme for the most powerful theme created for Wordpress.
 Tags: responsive-layout,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar,custom-background,custom-colors,featured-images,full-width-template,post-formats,rtl-language-support,theme-options,threaded-comments,translation-ready
-Version: 0.1.3
-GitHub Theme URI: webbouwer/Divi-White
-GitHub Theme URI: https://github.com/webbouwer/Divi-White
+Version: 0.1.2
 */
 
 /*
@@ -17,60 +15,8 @@ https://divi-magazine.com/using-font-awesome-with-divi/
 */
 
 
-.et-social-icon:before {
-    /*content: "\f000";*/
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    /*--adjust as necessary--
-    color: #000;
-    font-size: 18px;
-    padding-right: 0.5em;
-    position: absolute;
-    top: 10px;
-    left: 0; */
-}
-
 .et-social-github a.icon:before {
     content: "\f113"; /* fa-github-alt */
-    font-family: "FontAwesome" !important;
-}
-
-
-.et-social-whatsapp a.icon:before {
-    content: "\f0ac" /* ? fa-whatsapp f232 ? f0ac globe */
-    font-family: "FontAwesome" !important;
-}
-
-.et-social-discord a.icon:before {
-    content: "\f0ac"; /* ? fa-discord  f392 ? f0ac globe */
-    font-family: "FontAwesome" !important;
-}
-.et-social-tiktok a.icon:before {
-    content: "\f0ac"; /* ? fa-tiktok f232 ? f0ac globe */
-    font-family: "FontAwesome" !important;
-}
-.et-social-snapchat a.icon:before {
-    content: "\f0ac"; /* fa-snapchat-ghost / fa-snapchat f2ab / f0ac globe */
-    font-family: "FontAwesome" !important;
-}
-
-
-.et-social-steam a.icon:before {
-    content: "\f1b6"; /* fa-steam  */
-    font-family: "FontAwesome" !important;
-}
-.et-social-reddit a.icon:before {
-    content: "\f1a1"; /* fa-reddit-alien fa-reddit f1a1   */
-    font-family: "FontAwesome" !important;
-}
-.et-social-digg a.icon:before {
-    content: "\f1a6"; /* fa-digg f1a6   */
-    font-family: "FontAwesome" !important;
-}
-.et-social-twitch a.icon:before {
-    content: "\f1e8"; /* fa-twitch  */
     font-family: "FontAwesome" !important;
 }
 .et-social-youtube a.icon:before {
@@ -81,21 +27,8 @@ https://divi-magazine.com/using-font-awesome-with-divi/
     content: "\f174"; /*  fa-tumblr-square  */
     font-family: "FontAwesome" !important;
 }
-
-
-.et-social-mewe a.icon:before {
-    content: "\f0ac"; /* fa-mewe ? globe */
-    font-family: "FontAwesome" !important;
-}
-
-
-.et-social-dribbble a.icon:before {
-    content: "\f17d"; /* fa-dribbble */
-    font-family: "FontAwesome" !important;
-}
-
 .et-social-skype a.icon:before {
-    content: "\f17e"; /*  fa-skype  */
+    content: "\f17e"; /*  fa-fa-skype  */
     font-family: "FontAwesome" !important;
 }
 .et-social-vimeo a.icon:before {
@@ -106,42 +39,3 @@ https://divi-magazine.com/using-font-awesome-with-divi/
     content: "\f0d3"; /*  fa-pinterest-square  */
     font-family: "FontAwesome" !important;
 }
-.et-social-flickr a.icon:before {
-    content: "\f16e"; /*  fa-flickr   \e0a6 */
-    font-family: "FontAwesome" !important;
-}
-
-
-.et-social-xbox a.icon:before {
-    content: "\f0ac"; /* fa-xbox  ? globe  */
-    font-family: "FontAwesome" !important;
-}
-
-
-.et-social-jsfiddle a.icon:before {
-    content: "\f1cc"; /* fa-jsfiddle  */
-    font-family: "FontAwesome" !important;
-}
-
-.et-social-codepen a.icon:before {
-    content: "\f1cb"; /* fa-codepen  */
-    font-family: "FontAwesome" !important;
-}
-
-.et-social-codeshare a.icon:before {
-    content: "\f0ac"; /* fa-codeshare ? globe */
-    font-family: "FontAwesome" !important;
-}
-
-.et-social-jsbin a.icon:before {
-    content: "\f0ac"; /* fa-jsbin ?  globe */
-    font-family: "FontAwesome" !important;
-}
-
-.et-social-bitbucket a.icon:before {
-    content: "\f171"; /* fa-bitbucket */
-    font-family: "FontAwesome" !important;
-}
-
-
-

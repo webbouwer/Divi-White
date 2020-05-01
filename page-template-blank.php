@@ -5,11 +5,7 @@ Template Name: Blank Page
 
 get_header();
 
-$post_id = get_the_ID();
-$is_page_builder_used = et_pb_is_pagebuilder_used( $post_id );
-$container_tag = 'product' === get_post_type( $post_id ) ? 'div' : 'article';
-
-?>
+$is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
 <div id="main-content">
 
@@ -23,7 +19,7 @@ $container_tag = 'product' === get_post_type( $post_id ) ? 'div' : 'article';
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<<?php echo $container_tag; ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 				<?php if ( ! $is_page_builder_used ) : ?>
 
@@ -36,8 +32,7 @@ $container_tag = 'product' === get_post_type( $post_id ) ? 'div' : 'article';
 					$height = (int) apply_filters( 'et_pb_index_blog_image_height', 675 );
 					$classtext = 'et_featured_image';
 					$titletext = get_the_title();
-					$alttext = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
-                    $thumbnail = get_thumbnail( $width, $height, $classtext, $alttext, $titletext, false, 'Blogimage' );
+					$thumbnail = get_thumbnail( $width, $height, $classtext, $titletext, $titletext, false, 'Blogimage' );
 					$thumb = $thumbnail["thumb"];
 
 					if ( 'on' === et_get_option( 'divi_page_thumbnails', 'false' ) && '' !== $thumb )
@@ -59,7 +54,7 @@ $container_tag = 'product' === get_post_type( $post_id ) ? 'div' : 'article';
 					if ( ! $is_page_builder_used && comments_open() && 'on' === et_get_option( 'divi_show_pagescomments', 'false' ) ) comments_template( '', true );
 				?>
 
-				 </<?php echo $container_tag; ?>> <!-- .et_pb_post -->
+				</article> <!-- .et_pb_post -->
 
 			<?php endwhile; ?>
 
