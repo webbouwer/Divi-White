@@ -39,7 +39,7 @@ https://divi-magazine.com/using-font-awesome-with-divi/
 
 
 .et-social-whatsapp a.icon:before {
-    content: "\f0ac" /* ? fa-whatsapp f232 ? f0ac globe */
+    content: "\f232" /* ? fa-whatsapp f232 ? f0ac globe */
     font-family: "FontAwesome" !important;
 }
 
