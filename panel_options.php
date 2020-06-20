@@ -20,13 +20,13 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Github Icon. ", $themename ) ),
-
+/*
     array( "name" => esc_html__( "Show Whatsapp Icon", $themename ),
            "id" => $shortname."_show_whatsapp_icon",
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Whatsapp Icon. ", $themename ) ),
-/*
+
     array( "name" => esc_html__( "Show Discord Icon", $themename ),
            "id" => $shortname."_show_discord_icon",
            "type" => "checkbox",
