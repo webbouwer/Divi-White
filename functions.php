@@ -109,6 +109,15 @@ function dw_section_menu_images_callback(){
 
 }
 
+function dw_section_linkmanager_callback(){
+
+
+    $options = get_option( 'dw_enable_linkmanager' );
+    echo '<input name="dw_enable_linkmanager" id="dw_enable_linkmanager" type="checkbox" value="1" class="code" ' . checked( 1 , $options, false ) . ' />';
+    echo '(turn this on to use the original WP linkmanager)';
+
+}
+
 function dw_section_disable_gravatar_callback(){
 
 
@@ -141,6 +150,10 @@ function dw_theme_settings(){
     add_option('dw_implement_menu_images',1);// add theme option to database
     add_settings_field( 'dw_implement_menu_images', 'Enable menu images and descriptions','dw_section_menu_images_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the
     register_setting( 'dw-theme-panel-grp', 'dw_implement_menu_images');
+
+    add_option('dw_enable_linkmanager',1);// add theme option to database
+    add_settings_field( 'dw_enable_linkmanager', 'Enable menu images and descriptions','dw_section_linkmanager_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the
+    register_setting( 'dw-theme-panel-grp', 'dw_enable_linkmanager');
 
     add_option('dw_disable_gravatar_code',1);// add theme option to database
     add_settings_field( 'dw_disable_gravatar_code', 'Disable Gravatar code','dw_section_disable_gravatar_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the “first_section”
@@ -206,7 +219,12 @@ if ( ! function_exists( 'et_load_core_options' ) ) {
 
 }
 
-
+if( get_option( 'dw_enable_linkmanager' ) == 1 ){
+    /*
+     * Return of the Links Manager'
+     */
+    add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+}
 
 if( get_option( 'dw_disable_gravatar_code' ) == 1 ){
 
