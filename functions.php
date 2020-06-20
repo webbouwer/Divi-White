@@ -118,9 +118,25 @@ function dw_section_disable_gravatar_callback(){
 
 }
 
+function dw_section_pluginbundle_callback(){
+
+
+    $options = get_option( 'dw_select_pluginbundle' );
+    echo '<select name="dw_select_pluginbundle" id="dw_select_pluginbundle" value="'. $options .'">';
+    echo '<option value="0" '. selected( '0' == $options ) . '>Minimal</option>';
+    echo '<option value="1" '. selected( '1' == $options ) . '>Woocommerce</option>';
+    echo '<option value="2" '. selected( '2' == $options ) . '>Full(200+)</option>';
+    echo '</select>';
+
+}
+
 function dw_theme_settings(){
 
     add_settings_section( 'dw_first_section', 'Divi White Theme Options', 'dw_section_description_implement', 'dw-theme-panel');
+
+    add_option('dw_select_pluginbundle',1);// add theme option to database
+    add_settings_field( 'dw_select_pluginbundle', 'Select plugin install bundle','dw_section_pluginbundle_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the “first_section”
+    register_setting( 'dw-theme-panel-grp', 'dw_select_pluginbundle');
 
     add_option('dw_implement_menu_images',1);// add theme option to database
     add_settings_field( 'dw_implement_menu_images', 'Enable menu images and descriptions','dw_section_menu_images_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the
@@ -129,6 +145,7 @@ function dw_theme_settings(){
     add_option('dw_disable_gravatar_code',1);// add theme option to database
     add_settings_field( 'dw_disable_gravatar_code', 'Disable Gravatar code','dw_section_disable_gravatar_callback', 'dw-theme-panel','dw_first_section' );//add settings field to the “first_section”
     register_setting( 'dw-theme-panel-grp', 'dw_disable_gravatar_code');
+
 }
 add_action('admin_init','dw_theme_settings');
 
