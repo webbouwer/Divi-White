@@ -6,7 +6,7 @@ This wordpress child-theme is based on the Divi theme by Elegant themes and requ
  - Theme option
     - [x] Plugin bundle select: A list of selected plugins available for install.
     - [x] Enable menu images/decription: icon/image and description in regular menu options
-    - [ ] enable the wP linkmanager
+    - [x] enable the WP linkmanager
     - [x] Disable the default gravatar icon (if no profile pictures needed)
     
  - Menu

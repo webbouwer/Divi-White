@@ -26,23 +26,6 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
-        // header primary submenu horizontal
-        $wp_customize->add_setting( 'et_divi_header_primary_submenu_horizontal', array(
-            'default'    => 0
-        ) );
-        $wp_customize->add_control(
-            new WP_Customize_Control(
-                $wp_customize,
-                'et_divi_header_primary_submenu_horizontal',
-                array(
-                    'label'          => __( 'Horizontal Submenu', $themename ),
-                    'section'   => 'et_divi_header_primary',
-                    'settings'  => 'et_divi_header_primary_submenu_horizontal',
-                    'type'      => 'checkbox',
-                )
-            )
-        );
-
 
     // header secondary display
     $wp_customize->add_setting( 'et_divi_header_secondary_display', array(
@@ -96,6 +79,25 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
+    	$wp_customize->add_setting( 'et_divi_header_mainmenu_dropdown' , array(
+		'default' => 'default',
+        'priority' => '8000',
+		//'sanitize_callback' => 'onepiece_sanitize_default',
+    	));
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'et_divi_header_mainmenu_dropdown', array(
+            	'label'          => __( 'Menu dropdown type', $themename ),
+            	'section'        => 'et_divi_header_primary',
+            	'settings'       => 'et_divi_header_mainmenu_dropdown',
+            	'type'           => 'select',
+ 	    	'description'    => __( 'Select submenu dropdown type', $themename ),
+            	'choices'        => array(
+                	'default'   => __( 'Default', $themename ),
+                	'pointer'   => __( 'Pointer block', $themename ),
+                	'horizontal'   => __( 'Horizontal Menu', $themename ),
+            	)
+    	)));
+
 
     // set mobile menu breakpoint
     $wp_customize->add_setting( 'et_divi_mobile_menu_breakpoint', array(
@@ -131,6 +133,8 @@ function DW_theme_customizer( $wp_customize ){
             )
         )
     );
+
+
 
     // blog sidebar
     $wp_customize->add_section('et_divi_blog_settings_sidebar', array(
@@ -236,9 +240,52 @@ function DW_customize_adaptive(){
             } // end first section
         ?>
 
+        <?php if( get_theme_mod('et_divi_header_mainmenu_dropdown', 'default' ) == 'pointer' ){ ?>
 
+        <?php
+        // main header dropdown menu
+        ?>
+        #et-top-navigation nav #top-menu .menu-item-has-children {
+            padding-right: 0px;
+        }
+        #et-top-navigation nav #top-menu .menu-item-has-children > a:first-child:after{
+            content:"";
+        }
+        /* Main nav */
+        #et-top-navigation nav > ul li,
+        .et_pb_button,
+        #et-top-navigation nav > ul > li > ul > li,
+        .et_mobile_menu li a
+        {
+            /*font-weight:400 !important;
+            letter-spacing:0.04em;*/
+        }
 
-        <?php if( get_theme_mod('et_divi_header_primary_submenu_horizontal', '0' ) != '0' ){ ?>
+        #et-top-navigation nav > ul li
+        {
+        }
+        #et-top-navigation nav > ul > li > ul
+        {
+            /*border-top:none;*/
+            border-top: 2px solid <?php get_theme_mod('et_divi_primary_nav_dropdown_line_color', 'transparent'); ?>;
+            margin-top: 8px;
+            margin-left: -100px;
+        }
+
+        #et-top-navigation nav > ul > li > ul:after {
+            position: absolute;
+            left: 50%;
+            margin-left: -20px;
+            top: -18px;
+            width: 0;
+            height: 0;
+            content:'';
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-bottom: 18px solid <?php get_theme_mod('et_divi_primary_nav_dropdown_line_color', 'transparent'); ?>;
+        }
+
+        <?php }else if( get_theme_mod('et_divi_header_mainmenu_dropdown', 'default' ) == 'horizontal' ){ ?>
             /* primary menu sub levels horizontal */
             .nav li ul {
                 visibility: hidden;
