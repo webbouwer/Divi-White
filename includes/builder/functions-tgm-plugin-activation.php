@@ -26,6 +26,7 @@ $plugins = array(
 
 
     // special admin
+
     array(
     'name' => 'Github Updater (theme updater)', // The plugin name.
     'slug' => 'github-updater', // The plugin slug (typically the folder name).
@@ -34,6 +35,7 @@ $plugins = array(
     'external_url' => 'https://github.com/afragen/github-updater', // If set, overrides default API URL and points to an external URL.
     ),
 
+    /*
     array(
     'name' => 'WP Custom Admin Interface',
     'slug' => 'wp-custom-admin-interface',
@@ -48,6 +50,7 @@ $plugins = array(
     'required' => false, // If false, the plugin is only 'recommended' instead of required.
     'external_url' => 'https://www.elegantthemes.com/gallery/divi/', // If set, overrides default API URL and points to an external URL.
     ),
+    */
 
     /*
     // This is an example of how to include a plugin pre-packaged with a theme.
@@ -82,9 +85,24 @@ $plugins = array(
 );
 
 
+$listtype = get_option( 'dw_select_pluginbundle' );
+$listsource = 'https://raw.githubusercontent.com/webbouwer/wp-plugin-bundle/master/minimal.md';
+
+switch($listtype){
+    case '1':
+        $listsource = 'https://raw.githubusercontent.com/webbouwer/wp-plugin-bundle/master/wooshop.md';
+        break;
+    case '2':
+        $listsource = 'https://raw.githubusercontent.com/webbouwer/wp-plugin-bundle/master/list.md';
+        break;
+    default:
+        $listsource = 'https://raw.githubusercontent.com/webbouwer/wp-plugin-bundle/master/minimal.md';
+        break;
+
+}
 // or :)
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://raw.githubusercontent.com/webbouwer/wp-plugin-bundle/master/list.md'  );
+curl_setopt($ch, CURLOPT_URL, $listsource );
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $gitdata = curl_exec($ch);

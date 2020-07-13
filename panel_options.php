@@ -131,7 +131,7 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the CodePen Icon. ", $themename ) ),
-/*
+    /*
      array( "name" => esc_html__( "Show Codeshare Icon", $themename ),
            "id" => $shortname."_show_codeshare_icon",
            "type" => "checkbox",
@@ -143,7 +143,7 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the JS Bin Icon. ", $themename ) ),
-       */
+    */
      array( "name" => esc_html__( "Show Bitbucket Icon", $themename ),
            "id" => $shortname."_show_bitbucket_icon",
            "type" => "checkbox",
