@@ -1,5 +1,5 @@
 # Divi-White
-White label Divi Child Theme
+White label Divi Child Theme v2
 
 This wordpress child-theme is based on the Divi theme by Elegant themes and requires the Divi theme installed and working correctly in your wordpress environment.
 
