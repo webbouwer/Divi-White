@@ -14,9 +14,9 @@ This wordpress child-theme is based on the Divi theme by Elegant themes and requ
    
  - Customizer
    - [x] secondary menu bar: display on/off
-   - [x] header mainmenu homepage below first section: display on/off 
    - [x] header elements: display shadow on/off 
    - [x] Mobile styles: header mobile sticky on/off 
+   
  - Blog 
    - [x] Blog > sidebar: sidebar display on/off 
    
