@@ -292,33 +292,46 @@ function DW_customize_adaptive(){
         ?>
         }
         /* Main nav */
-        #et-top-navigation nav #top-menu .menu-item-has-children {
-            padding-right: 0px;
+        #et-top-navigation nav ul > li.menu-item-has-children,
+        #et-top-navigation nav ul > li.menu-item-has-children > a
+        {
+            padding-right: 0px !important;
         }
-        #et-top-navigation nav #top-menu .menu-item-has-children > a:first-child:after{
+
+        #et-top-navigation nav #top-menu .menu-item-has-children > a:after{
             content:"";
         }
-
-
+        #et-top-navigation nav > ul > li.menu-item-has-children
+        {
+            padding-right: 0px !important;
+        }
         #et-top-navigation nav > ul li,
         .et_pb_button,
         #et-top-navigation nav > ul > li > ul > li,
         .et_mobile_menu li a
         {
-            /*font-weight:400 !important;
+            /*padding-right: 0px !important;
+            font-weight:400 !important;
             letter-spacing:0.04em;*/
         }
 
-        #et-top-navigation nav > ul li
-        {
-        }
+
+
+
         #et-top-navigation nav > ul > li > ul
         {
 
             border-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topweight', 3 );   ?>px solid <?php echo get_theme_mod('et_divi_header_mainmenu_base_color', 'rgba(46,163,242,0.83)' );   ?>;
             margin-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topmargin', 8 );   ?>px;
-            margin-left: -100px;
+            margin-left: -95px;
 
+            border-radius:<?php echo get_theme_mod('et_divi_header_mainmenu_submenuradius', 3 );   ?>px;
+        }
+
+        #et-top-navigation nav > ul > li > ul li ul
+        {
+            border-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topweight', 3 );   ?>px solid <?php echo get_theme_mod('et_divi_header_mainmenu_base_color', 'rgba(46,163,242,0.83)' );   ?>;
+            margin-top: -<?php echo (get_theme_mod('et_divi_header_mainmenu_topweight', 3 ) - get_theme_mod('et_divi_header_mainmenu_submenuradius', 3 ) ); ?>px;
             border-radius:<?php echo get_theme_mod('et_divi_header_mainmenu_submenuradius', 3 );   ?>px;
         }
 
@@ -477,8 +490,12 @@ function DW_customize_adaptive(){
           flex: 1 0 auto;
         }
 
-
         <?php } ?>
+
+        #top-menu-nav li.current_page_item  > a
+        {
+            color:<?php echo get_theme_mod('et_divi_fixed_menu_link_active', 'rgba(46,163,242,0.83)' ); ?> !important;
+        }
 
         <?php if( is_front_page() && get_theme_mod('et_divi_header_fixed_section_links', 0 ) == '1' ){ ?>
         #top-menu-nav li.current-menu-item > a
