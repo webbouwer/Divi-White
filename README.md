@@ -1,9 +1,8 @@
 
 # Divi-White
-White label Divi Child Wordpress Theme
-
+Divi White Child Wordpress Theme
 ![enter image description here](https://raw.githubusercontent.com/webbouwer/Divi-White/master/preview.png)
-A wordpress child-theme for Divi theme. This wordpress child theme requires the commercial version of Divi theme by Elegant themes installed and working correctly in your wordpress environment.
+This wordpress child theme requires the commercial version of Divi theme by Elegant themes installed and working correctly in your wordpress environment.
 After buying and using the Divi theme extensively a quick way was needed to extend and enhance the Divi functionalities with some of the most common (expected) functionalities and a decent set of plugins to completely prepare the Wordpress website installation and move instandly into the Divi wysiwyg frontend design and content placement fase.
 
 The Divi-White child theme functionalities are of three types;
