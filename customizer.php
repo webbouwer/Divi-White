@@ -27,10 +27,10 @@ function DW_theme_customizer( $wp_customize ){
     ));
 
 
-
-
-
     /* add default header secondary display control */
+
+    // header secondary display
+
     $wp_customize->add_setting( 'et_divi_header_secondary_display', array(
         'default'    => 1
     ) );
@@ -213,6 +213,7 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
+  
     // set mobile menu sticky et_divi_mobile_menu
     $wp_customize->add_setting( 'et_divi_mobile_menu_sticky', array(
         'default'    => 1
@@ -271,6 +272,62 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
+    /* Custom panels
+    // add panels
+    $wp_customize->add_panel('DW_elements', array(
+        'title'    => __('DW Elements', $themename ),
+        'priority' => 2,
+    ));
+
+    // add sections
+    $wp_customize->add_section('DW_elements_header', array(
+        'title'    => __('Header', $themename ),
+        'panel'  => 'DW_elements',
+		'priority' => 20,
+    ));
+    $wp_customize->add_section('DW_elements_sidebar', array(
+        'title'    => __('Sidebar', $themename ),
+        'panel'  => 'DW_elements',
+		'priority' => 20,
+    ));
+
+    // header add options
+    $wp_customize->add_setting( 'DW_elements_header_secondary_display' , array(
+		'default' => 'hide',
+		'sanitize_callback' => 'DW_sanitize_default',
+    ));
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'DW_elements_header_secondary_display', array(
+            	'label'          => __( 'Display Secondary bar', $themename ),
+            	'section'        => 'DW_elements_header',
+            	'settings'       => 'DW_elements_header_secondary_display',
+            	'type'           => 'select',
+ 	    		'description'    => __( 'Select the secondary menu bar display.', $themename ),
+            	'choices'        => array(
+                	'hide'   => __( 'hide', $themename ),
+                	'show'   => __( 'show', $themename ),
+            	)
+    )));
+
+    // sidebar add options
+    $wp_customize->add_setting( 'DW_elements_sidebar_display' , array(
+		'default' => 'right',
+		'sanitize_callback' => 'DW_sanitize_default',
+    ));
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'DW_elements_sidebar_display', array(
+            	'label'          => __( 'Sidebar position', $themename ),
+            	'section'        => 'DW_elements_sidebar',
+            	'settings'       => 'DW_elements_sidebar_display',
+            	'type'           => 'select',
+ 	    		'description'    => __( 'Select the default sidebar position.', $themename ),
+            	'choices'        => array(
+                	'hide'   => __( 'hidden', $themename ),
+                	'left'   => __( 'left', $themename ),
+            		'right'   => __( 'right', $themename ),
+            	)
+    )));
+    */
+
+
 
 }
 add_action( 'customize_register', 'DW_theme_customizer' );
@@ -284,7 +341,6 @@ $menubelowfirstsection = get_theme_mod('et_divi_header_element_position_firstsec
 function DW_customize_adaptive(){
     // start output css ?>
     <style>
-
         <?php if( get_theme_mod('et_divi_header_mainmenu_dropdown', 'default' ) == 'pointer' ){ ?>
 
         <?php
@@ -393,8 +449,6 @@ function DW_customize_adaptive(){
                 color: <?php get_theme_mod('et_divi-primary_nav_dropdown_link_color', 'black'); ?>;
             }
         <?php } ?>
-
-
 
         <?php if( get_theme_mod('et_divi_header_secondary_display', '1' ) != '1' ){ ?>
         /* remove header secondary menubar */
@@ -511,16 +565,20 @@ function DW_customize_adaptive(){
         jQuery(function ($) {
             $(document).ready( function(){
 
+
                 <?php if( is_front_page() && get_theme_mod('et_divi_header_fixed_section_links', 0 ) == '1' ){ ?>
 
-				$(window).load(function(){
+                <?php if( get_theme_mod('et_divi_header_fixed_section_links', 0 ) == '1' ){ ?>
+
+
+				        $(window).load(function(){
                     setPageActiveMenuLink();
                 });
                 // Scroll Innit
 				$(window).scroll(function(){
                     setPageActiveMenuLink();
                 });
-                $(window).resize(function(){
+                $(window).onresize(function(){
                     setPageActiveMenuLink();
                  });
                 function setPageActiveMenuLink(){

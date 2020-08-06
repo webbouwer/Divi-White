@@ -9,6 +9,7 @@ Tags: responsive-layout,one-column,two-columns,three-columns,four-columns,left-s
 Version: 2.0.0
 GitHub Theme URI: webbouwer/Divi-White
 GitHub Theme URI: https://github.com/webbouwer/Divi-White
+
 */
 
 /*
@@ -17,25 +18,12 @@ https://divi-magazine.com/using-font-awesome-with-divi/
 */
 
 
-.et-social-icon:before {
-    /*content: "\f000";*/
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    /*--adjust as necessary--
-    color: #000;
-    font-size: 18px;
-    padding-right: 0.5em;
-    position: absolute;
-    top: 10px;
-    left: 0; */
-}
-
 .et-social-github a.icon:before {
     content: "\f113"; /* fa-github-alt */
     font-family: "FontAwesome" !important;
 }
+
+
 
 
 .et-social-whatsapp a.icon:before {
@@ -73,6 +61,9 @@ https://divi-magazine.com/using-font-awesome-with-divi/
     content: "\f1e8"; /* fa-twitch  */
     font-family: "FontAwesome" !important;
 }
+
+
+
 .et-social-youtube a.icon:before {
     content: "\f16a"; /*  fa-youtube-play  */
     font-family: "FontAwesome" !important;
@@ -81,21 +72,8 @@ https://divi-magazine.com/using-font-awesome-with-divi/
     content: "\f174"; /*  fa-tumblr-square  */
     font-family: "FontAwesome" !important;
 }
-
-
-.et-social-mewe a.icon:before {
-    content: "\f0ac"; /* fa-mewe ? globe */
-    font-family: "FontAwesome" !important;
-}
-
-
-.et-social-dribbble a.icon:before {
-    content: "\f17d"; /* fa-dribbble */
-    font-family: "FontAwesome" !important;
-}
-
 .et-social-skype a.icon:before {
-    content: "\f17e"; /*  fa-skype  */
+    content: "\f17e"; /*  fa-fa-skype  */
     font-family: "FontAwesome" !important;
 }
 .et-social-vimeo a.icon:before {
@@ -106,42 +84,3 @@ https://divi-magazine.com/using-font-awesome-with-divi/
     content: "\f0d3"; /*  fa-pinterest-square  */
     font-family: "FontAwesome" !important;
 }
-.et-social-flickr a.icon:before {
-    content: "\f16e"; /*  fa-flickr   \e0a6 */
-    font-family: "FontAwesome" !important;
-}
-
-
-.et-social-xbox a.icon:before {
-    content: "\f0ac"; /* fa-xbox  ? globe  */
-    font-family: "FontAwesome" !important;
-}
-
-
-.et-social-jsfiddle a.icon:before {
-    content: "\f1cc"; /* fa-jsfiddle  */
-    font-family: "FontAwesome" !important;
-}
-
-.et-social-codepen a.icon:before {
-    content: "\f1cb"; /* fa-codepen  */
-    font-family: "FontAwesome" !important;
-}
-
-.et-social-codeshare a.icon:before {
-    content: "\f0ac"; /* fa-codeshare ? globe */
-    font-family: "FontAwesome" !important;
-}
-
-.et-social-jsbin a.icon:before {
-    content: "\f0ac"; /* fa-jsbin ?  globe */
-    font-family: "FontAwesome" !important;
-}
-
-.et-social-bitbucket a.icon:before {
-    content: "\f171"; /* fa-bitbucket */
-    font-family: "FontAwesome" !important;
-}
-
-
-

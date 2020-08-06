@@ -6,7 +6,7 @@
 		return;
 	endif;
 
-	global $et_comments_header_level, $et_comments_form_title_level;
+	global $et_comments_header_level;
 
 	$et_comments_header_level_processed = isset( $et_comments_header_level ) && '' !== $et_comments_header_level ? et_pb_process_header_level( $et_comments_header_level, 'h1' ) : 'h1';
 ?>
@@ -54,37 +54,9 @@
 		  <?php endif; ?>
 	   </div>
 	<?php endif; ?>
+	<?php if ( 'open' === $post->comment_status ) : ?>
+		<?php comment_form( array('label_submit' => esc_attr__( 'Submit Comment', 'et_builder' ), 'title_reply' => '<span>' . esc_attr__( 'Submit a Comment', 'et_builder' ) . '</span>', 'title_reply_to' => esc_attr__( 'Leave a Reply to %s', 'et_builder' ), 'class_submit' => 'submit et_pb_button', 'comment_notes_after' => '', 'id_submit' => 'et_pb_submit' ) ); ?>
+	<?php else: ?>
 
-
-    <?php
-    if ( 'open' === $post->comment_status ) :
-
-    // Comment submit content title level.
-
-    $et_comments_form_title_level_processed = isset( $et_comments_form_title_level ) && '' !== $et_comments_form_title_level ? et_pb_process_header_level( $et_comments_form_title_level, 'h3' ) : 'h3';
-
-    comment_form( array('label_submit' => esc_attr__( 'Submit Comment', 'et_builder' ), 'title_reply' => '<span>' . esc_attr__( 'Submit a Comment', 'et_builder' ) . '</span>', 'title_reply_to' => esc_attr__( 'Leave a Reply to %s', 'et_builder' ), 'class_submit' => 'submit et_pb_button', 'comment_notes_after' => '', 'id_submit' => 'et_pb_submit' ) );
-
-    $et_comments_form_title_level_escaped = et_core_intentionally_unescaped( $et_comments_form_title_level_processed, 'fixed_string' );
-
-    comment_form( array(
-        'label_submit' => esc_attr__( 'Submit Comment', 'et_builder' ),
-        'title_reply' => '<span>' . esc_attr__( 'Submit a Comment', 'et_builder' ) . '</span>',
-        'title_reply_to' => esc_attr__( 'Leave a Reply to %s', 'et_builder' ),
-        'title_reply_before' => '<' . $et_comments_form_title_level_escaped . ' id="reply-title" class="comment-reply-title">',
-        'title_reply_after' => '</' . $et_comments_form_title_level_escaped . '>',
-        'class_submit' => 'submit et_pb_button',
-        'comment_notes_after' => '',
-        'id_submit' => 'et_pb_submit',
-    ));
-
-        /* OLD theme comment setup
-            comment_form( array('label_submit' => esc_attr__( 'Submit Comment', 'et_builder' ), 'title_reply' => '<span>' . esc_attr__( 'Submit a Comment', 'et_builder' ) . '</span>', 'title_reply_to' => esc_attr__( 'Leave a Reply to %s', 'et_builder' ), 'class_submit' => 'submit et_pb_button', 'comment_notes_after' => '', 'id_submit' => 'et_pb_submit' ) );
-        */
-
-else:
-
-endif; // if you delete this the sky will fall on your head
-?>
-
+	<?php endif; // if you delete this the sky will fall on your head ?>
 </section>

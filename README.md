@@ -5,6 +5,7 @@ Divi White Child Wordpress Theme
 This wordpress child theme requires the commercial version of Divi theme by Elegant themes installed and working correctly in your wordpress environment.
 After buying and using the Divi theme extensively a quick way was needed to extend and enhance the Divi functionalities with some of the most common (expected) functionalities and a decent set of plugins to completely prepare the Wordpress website installation and move instandly into the Divi wysiwyg frontend design and content placement fase.
 
+
 The Divi-White child theme functionalities are of three types;
 
   - Core
@@ -27,4 +28,26 @@ The Divi-White child theme functionalities are of three types;
    - Divi social urls/icons 
 
      - linkedin, github, steam, reddit, digg, twitch, youtube, tumblr, skype, vimeo, pinterest, jsfiddle, CodePen, Bitbucket (originally only facebook, google+, twitter, instagram, rss)
+
+ - Recommended plugin install list
+   A list of selected plugins available for direct install. 
+ - Menu images & description
+   A basic extension of regular menu links with icon/image and description display.
+ - Customizer extended
+   - secondary menu bar: display on/off 
+   - header elements: display shadow on/off 
+   - Mobile styles: header mobile sticky on/off 
+   - Blog > sidebar: sidebar display on/off 
+   - Footer elements: footer sticky on/off
+ - Menu sections active on/off (simplyfied) 
+   - Page section menu links are displayed active on section scroll in view
+   
+ - Update 1.2: Extending divi social urls/icons (Font Awesome)
+    - linkedin
+    - github
+    - youtube
+    - tumblr 
+    - skype 
+    - vimeo
+    - pinterest
 
