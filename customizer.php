@@ -2,22 +2,10 @@
 // Customizer Divi-White
 // Divi White is a  child theme for the Divi Theme made by Elegant themes
 // https://www.gavick.com/blog/using-javascript-theme-customization-screen
+
 function DW_theme_customizer( $wp_customize ){
 
     global $themename;
-
-    /* Enhanced panels */
-    /*
-    $wp_customize->add_panel('dw_custom', array(
-        	'title'    => __('DW Global', $themename),
-        	'priority' => 12,
-    ));
-    $wp_customize->add_section('dw_custom_header', array(
-        	'title'    => __('DW Header Options', $themename),
-        	'panel'  => 'et_divi_header_panel',
-			'priority' => 99,
-    ));
-    */
 
     /* Header primairy panels */
     $wp_customize->add_section('dw_custom_header', array(
@@ -26,10 +14,6 @@ function DW_theme_customizer( $wp_customize ){
 			'priority' => 99997,
     ));
 
-
-    /* add default header secondary display control */
-
-    // header secondary display
 
     $wp_customize->add_setting( 'et_divi_header_secondary_display', array(
         'default'    => 1
@@ -46,10 +30,6 @@ function DW_theme_customizer( $wp_customize ){
             )
         )
     );
-
-
-
-
 
     // active sections default menu links
     $wp_customize->add_setting( 'et_divi_header_fixed_section_links', array(
@@ -68,10 +48,6 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
-
-
-
-
     // add default header shadow control
     $wp_customize->add_setting( 'et_divi_header_bottomshadow_display', array(
         'default'    => 1
@@ -89,6 +65,7 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
+
     /* Adding default menu dropdown options */
     $wp_customize->add_setting( 'et_divi_header_mainmenu_dropdown' , array(
 		'default' => 'default',
@@ -105,65 +82,65 @@ function DW_theme_customizer( $wp_customize ){
                 	'default'   => __( 'Default', $themename ),
                 	'pointer'   => __( 'Pointer block', $themename ),
                 	'horizontal'   => __( 'Horizontal Menu', $themename ),
-            )
-    	)));
+        )
+    )));
 
     // height distance
-            $wp_customize->add_setting( 'et_divi_header_mainmenu_topmargin' , array(
+    $wp_customize->add_setting( 'et_divi_header_mainmenu_topmargin' , array(
 		'default' => 8,
         'priority' => '81',
 		//'sanitize_callback' => 'onepiece_sanitize_default',
-    	));
+    ));
 
     $wp_customize->add_control( 'et_divi_header_mainmenu_topmargin', array(
-  'type' => 'range',
-  'section' => 'dw_custom_header',
-  'label' => __( 'Submenu top margin' ),
-  //'description' => __( 'Determine submenu top border and pointer weight.' ),
-  'input_attrs' => array(
-    'min' => -50,
-    'max' => 100,
-    'step' => 1,
-  ),
-) );
+        'type' => 'range',
+        'section' => 'dw_custom_header',
+        'label' => __( 'Submenu top margin' ),
+        //'description' => __( 'Determine submenu top border and pointer weight.' ),
+        'input_attrs' => array(
+            'min' => -50,
+            'max' => 100,
+            'step' => 1,
+        ),
+    ));
 
     // top weight
-        $wp_customize->add_setting( 'et_divi_header_mainmenu_topweight' , array(
+    $wp_customize->add_setting( 'et_divi_header_mainmenu_topweight' , array(
 		'default' => 3,
         'priority' => '81',
 		//'sanitize_callback' => 'onepiece_sanitize_default',
-    	));
+    ));
 
     $wp_customize->add_control( 'et_divi_header_mainmenu_topweight', array(
-  'type' => 'range',
-  'section' => 'dw_custom_header',
-  'label' => __( 'Submenu top pointer weight' ),
-  //'description' => __( 'Determine submenu top border and pointer weight.' ),
-  'input_attrs' => array(
-    'min' => 1,
-    'max' => 20,
-    'step' => 1,
-  ),
-) );
+        'type' => 'range',
+        'section' => 'dw_custom_header',
+        'label' => __( 'Submenu top pointer weight' ),
+        //'description' => __( 'Determine submenu top border and pointer weight.' ),
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 20,
+            'step' => 1,
+        ),
+    ));
 
-       // rounded corners
-        $wp_customize->add_setting( 'et_divi_header_mainmenu_submenuradius' , array(
+    // rounded corners
+    $wp_customize->add_setting( 'et_divi_header_mainmenu_submenuradius' , array(
 		'default' => 3,
         'priority' => '83',
 		//'sanitize_callback' => 'onepiece_sanitize_default',
-    	));
+    ));
 
     $wp_customize->add_control( 'et_divi_header_mainmenu_submenuradius', array(
-  'type' => 'range',
-  'section' => 'dw_custom_header',
-  'label' => __( 'Submenu rounded corners' ),
-  //'description' => __( 'Determine submenu top border and pointer weight.' ),
-  'input_attrs' => array(
-    'min' => 0,
-    'max' => 100,
-    'step' => 1,
-  ),
-) );
+        'type' => 'range',
+        'section' => 'dw_custom_header',
+        'label' => __( 'Submenu rounded corners' ),
+        //'description' => __( 'Determine submenu top border and pointer weight.' ),
+        'input_attrs' => array(
+            'min' => 0,
+            'max' => 100,
+            'step' => 1,
+        ),
+    ));
 
     /* Adding default menu dropdown style colors */
     $wp_customize->add_setting( 'et_divi_header_mainmenu_base_color' , array(
@@ -272,65 +249,10 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
-    /* Custom panels
-    // add panels
-    $wp_customize->add_panel('DW_elements', array(
-        'title'    => __('DW Elements', $themename ),
-        'priority' => 2,
-    ));
-
-    // add sections
-    $wp_customize->add_section('DW_elements_header', array(
-        'title'    => __('Header', $themename ),
-        'panel'  => 'DW_elements',
-		'priority' => 20,
-    ));
-    $wp_customize->add_section('DW_elements_sidebar', array(
-        'title'    => __('Sidebar', $themename ),
-        'panel'  => 'DW_elements',
-		'priority' => 20,
-    ));
-
-    // header add options
-    $wp_customize->add_setting( 'DW_elements_header_secondary_display' , array(
-		'default' => 'hide',
-		'sanitize_callback' => 'DW_sanitize_default',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'DW_elements_header_secondary_display', array(
-            	'label'          => __( 'Display Secondary bar', $themename ),
-            	'section'        => 'DW_elements_header',
-            	'settings'       => 'DW_elements_header_secondary_display',
-            	'type'           => 'select',
- 	    		'description'    => __( 'Select the secondary menu bar display.', $themename ),
-            	'choices'        => array(
-                	'hide'   => __( 'hide', $themename ),
-                	'show'   => __( 'show', $themename ),
-            	)
-    )));
-
-    // sidebar add options
-    $wp_customize->add_setting( 'DW_elements_sidebar_display' , array(
-		'default' => 'right',
-		'sanitize_callback' => 'DW_sanitize_default',
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'DW_elements_sidebar_display', array(
-            	'label'          => __( 'Sidebar position', $themename ),
-            	'section'        => 'DW_elements_sidebar',
-            	'settings'       => 'DW_elements_sidebar_display',
-            	'type'           => 'select',
- 	    		'description'    => __( 'Select the default sidebar position.', $themename ),
-            	'choices'        => array(
-                	'hide'   => __( 'hidden', $themename ),
-                	'left'   => __( 'left', $themename ),
-            		'right'   => __( 'right', $themename ),
-            	)
-    )));
-    */
-
-
 
 }
 add_action( 'customize_register', 'DW_theme_customizer' );
+
 
 
 /* global custom vars */
@@ -339,6 +261,8 @@ $menubelowfirstsection = get_theme_mod('et_divi_header_element_position_firstsec
 
 // add frontend
 function DW_customize_adaptive(){
+
+
     // start output css ?>
     <style>
         <?php if( get_theme_mod('et_divi_header_mainmenu_dropdown', 'default' ) == 'pointer' ){ ?>
@@ -544,17 +468,22 @@ function DW_customize_adaptive(){
           flex: 1 0 auto;
         }
 
-        <?php } ?>
+
+
+        <?php }
+
+        $fixedcolor = get_theme_mod('et_divi_fixed_menu_link_active');
+        ?>
 
         #top-menu-nav li.current_page_item  > a
         {
-            color:<?php echo get_theme_mod('et_divi_fixed_menu_link_active', 'rgba(46,163,242,0.83)' ); ?> !important;
+            color:<?php echo get_theme_mod('et_divi-menu_link_active', $fixedcolor ); ?> !important;
         }
 
         <?php if( is_front_page() && get_theme_mod('et_divi_header_fixed_section_links', 0 ) == '1' ){ ?>
         #top-menu-nav li.current-menu-item > a
         {
-            color:<?php echo get_theme_mod('et_divi_fixed_menu_link_active', 'rgba(46,163,242,0.83)' ); ?> !important;
+            color:<?php echo get_theme_mod('et_divi-menu_link_active', $fixedcolor ); ?> !important;
         }
          <?php } ?>
     </style>
@@ -565,13 +494,9 @@ function DW_customize_adaptive(){
         jQuery(function ($) {
             $(document).ready( function(){
 
+            <?php if( is_front_page() && get_theme_mod('et_divi_header_fixed_section_links', 0 ) == '1' ){ ?>
 
-                <?php if( is_front_page() && get_theme_mod('et_divi_header_fixed_section_links', 0 ) == '1' ){ ?>
-
-                <?php if( get_theme_mod('et_divi_header_fixed_section_links', 0 ) == '1' ){ ?>
-
-
-				        $(window).load(function(){
+                $(window).load(function(){
                     setPageActiveMenuLink();
                 });
                 // Scroll Innit
@@ -611,8 +536,11 @@ function DW_customize_adaptive(){
     </script>
 
     <?php // end output js
+
 }
 add_action( 'wp_head' , 'DW_customize_adaptive' );
+
+
 
 // default sanitize function
 function DW_sanitize_default($obj){
