@@ -348,10 +348,10 @@ function DW_customize_adaptive(){
         <?php }else if( get_theme_mod('et_divi_header_mainmenu_dropdown', 'default' ) == 'horizontal' ){ ?>
 
 
-        <?php $size = get_theme_mod('et_divi_header_mainmenu_topweight', 3 ) * 3;   ?>
+        <?php $size = get_theme_mod('et_divi_header_mainmenu_topweight', 0 );   ?>
         <?php $fixedheight = get_theme_mod('et_divi_minimized_menu_height', 40 ); ?>
             /* primary menu sub levels horizontal */
-            .nav li ul {
+            .nav li ul{
                 visibility: hidden;
                 z-index: 9999;
                 position: fixed;
@@ -359,8 +359,8 @@ function DW_customize_adaptive(){
                 left: 0;
                 padding: <?php echo $fixedheight / 5; ?>px 0px;
                 text-align: center !important;
-                border-top: <?php echo $size;  ?>px solid <?php echo get_theme_mod('et_divi_header_mainmenu_base_color', 'rgba(46,163,242,0.83)' );  ?>;
-                background-color: <?php get_theme_mod('et_divi_header_primary_nav_dropdown_bg', 'transparent'); ?>;
+                border-top: <?php echo $size;  ?>px solid <?php echo get_theme_mod('et_divi_header_mainmenu_base_color', 'transparent' );  ?> !important;
+                background-color: <?php get_theme_mod('et_divi_header_mainmenu_optionbg_color', 'transparent'); ?> !important;
                 box-shadow: none;
             }
             .nav li.et-reverse-direction-nav li ul {
