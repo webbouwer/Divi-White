@@ -208,30 +208,6 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
-
-
-    /*blog sidebar
-    $wp_customize->add_section('et_divi_blog_settings_sidebar', array(
-        'title'    => __('Sidebar', $themename ),
-        'panel'  => 'et_divi_blog_settings',
-		'priority' => 20,
-    ));
-    $wp_customize->add_setting( 'et_divi_blog_settings_sidebar_display', array(
-        'default'    => '1'
-    ) );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'et_divi_blog_settings_sidebar_display',
-            array(
-                'label'     => __( 'Blog Sidebar display', $themename ),
-                'section'   => 'et_divi_blog_settings_sidebar',
-                'settings'  => 'et_divi_blog_settings_sidebar_display',
-                'type'      => 'checkbox',
-            )
-        )
-    );*/
-
     // footer sticky
     $wp_customize->add_setting( 'et_divi_footer_elements_sticky', array(
         'default'    => '1'
@@ -421,33 +397,6 @@ function DW_customize_adaptive(){
             max-height: 82vh;
         }
         <?php } ?>
-
-
-
-        <?php
-    /* remove sidebars
-    if( get_theme_mod('et_divi_blog_settings_sidebar_display', '1' ) != '1' ){ ?>
-
-        #main-content .container:before {
-            background: none;
-        }
-        @media (min-width: 981px){
-        #left-area {
-            min-width: 100%;
-            width: 100%;
-            padding: 23px 0px 0px !important;
-            margin:0px;
-            float: none !important;
-        }
-        }
-        #sidebar {
-            display:none;
-        }
-        <?php }
-         */
-        ?>
-
-
 
         <?php if( get_theme_mod('et_divi_footer_elements_sticky', '1' ) == '1' ){ ?>
         /* Footer */
