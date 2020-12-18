@@ -111,7 +111,7 @@ $options = array (
 				   "id" => $shortname . "_grab_image",
 				   "type" => "checkbox",
 				   "std" => "false",
-				   "desc" => esc_html__("By default thumbnail images are created using custom fields. However, if you would rather use the images that are already in your post for your thumbnail (and bypass using custom fields) you can activate this option. Once activcated thumbnail images will be generated automatically using the first image in your post. The image must be hosted on your own server.",$themename)
+				   "desc" => esc_html__("By default thumbnail images are created using custom fields. However, if you would rather use the images that are already in your post for your thumbnail (and bypass using custom fields) you can activate this option. Once activated thumbnail images will be generated automatically using the first image in your post. The image must be hosted on your own server.",$themename)
 			),
 
 			array( "name" => esc_html__( "Blog Style Mode", $themename ),

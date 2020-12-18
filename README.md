@@ -21,8 +21,7 @@ The Divi-White child theme functionalities are of three types;
       - secondary menu bar: display on/off
       - header mainmenu homepage below first section: display on/off
       - header elements: display shadow on/off
-      - Mobile styles: header mobile sticky on/off
-      - Blog > sidebar: sidebar display on/off
+      - Mobile styles: header mobile sticky on/off 
       - Footer elements: footer sticky on/off
    
    - Divi social urls/icons 

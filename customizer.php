@@ -210,7 +210,7 @@ function DW_theme_customizer( $wp_customize ){
 
 
 
-    // blog sidebar
+    /*blog sidebar
     $wp_customize->add_section('et_divi_blog_settings_sidebar', array(
         'title'    => __('Sidebar', $themename ),
         'panel'  => 'et_divi_blog_settings',
@@ -230,7 +230,7 @@ function DW_theme_customizer( $wp_customize ){
                 'type'      => 'checkbox',
             )
         )
-    );
+    );*/
 
     // footer sticky
     $wp_customize->add_setting( 'et_divi_footer_elements_sticky', array(
@@ -424,8 +424,10 @@ function DW_customize_adaptive(){
 
 
 
-        <?php if( get_theme_mod('et_divi_blog_settings_sidebar_display', '1' ) != '1' ){ ?>
-        /* remove sidebars */
+        <?php
+    /* remove sidebars
+    if( get_theme_mod('et_divi_blog_settings_sidebar_display', '1' ) != '1' ){ ?>
+
         #main-content .container:before {
             background: none;
         }
@@ -441,7 +443,9 @@ function DW_customize_adaptive(){
         #sidebar {
             display:none;
         }
-        <?php } ?>
+        <?php }
+         */
+        ?>
 
 
 
@@ -494,11 +498,12 @@ function DW_customize_adaptive(){
         jQuery(function ($) {
             $(document).ready( function(){
 
-            <?php if( is_front_page() && get_theme_mod('et_divi_header_fixed_section_links', 0 ) == '1' ){ ?>
+            <?php if( get_theme_mod('et_divi_header_fixed_section_links', 0 ) == '1' ){ ?>
 
-                $(window).load(function(){
-                    setPageActiveMenuLink();
-                });
+
+                $('#top-menu-nav ul li:first').addClass('current-menu-item');
+                setPageActiveMenuLink();
+
                 // Scroll Innit
 				$(window).scroll(function(){
                     setPageActiveMenuLink();
