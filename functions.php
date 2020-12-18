@@ -104,7 +104,7 @@ function dw_section_menu_images_callback(){
 
     $options = get_option( 'dw_implement_menu_images' );
     echo '<input name="dw_implement_menu_images" id="dw_implement_menu_images" type="checkbox" value="1" class="code" ' . checked( 1, $options, false ) . ' />';
-    echo '(turn this off if incompatible with other menu plugins )';
+    echo 'Menu option to display menu item image and description (turn this off if incompatible with other menu plugins )';
 
 
 }
@@ -114,7 +114,7 @@ function dw_section_linkmanager_callback(){
 
     $options = get_option( 'dw_enable_linkmanager' );
     echo '<input name="dw_enable_linkmanager" id="dw_enable_linkmanager" type="checkbox" value="1" class="code" ' . checked( 1 , $options, false ) . ' />';
-    echo '(turn this on to use the original WP linkmanager)';
+    echo 'Return of the Link Manager (turn this on to use the original WP linkmanager)';
 
 }
 
@@ -123,7 +123,7 @@ function dw_section_disable_gravatar_callback(){
 
     $options = get_option( 'dw_disable_gravatar_code' );
     echo '<input name="dw_disable_gravatar_code" id="dw_disable_gravatar_code" type="checkbox" value="1" class="code" ' . checked( 1 , $options, false ) . ' />';
-    echo '( turn this on if Gravatar code is bugging your site )';
+    echo 'Gravatar is contacted during page load to call for data when needed (turn this on if Gravatar code is bugging your site )';
 
 }
 
