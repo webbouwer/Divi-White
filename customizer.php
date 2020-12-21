@@ -225,10 +225,8 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
-
 }
 add_action( 'customize_register', 'DW_theme_customizer' );
-
 
 
 /* global custom vars */
@@ -493,8 +491,6 @@ function DW_customize_adaptive(){
 
 }
 add_action( 'wp_head' , 'DW_customize_adaptive' );
-
-
 
 // default sanitize function
 function DW_sanitize_default($obj){
