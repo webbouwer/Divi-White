@@ -15,11 +15,54 @@ $enable_options = array (
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Github Icon. ", $themename ) ),
 
+    array( "name" => esc_html__( "Show Whatsapp Icon", $themename ),
+           "id" => $shortname."_show_whatsapp_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Whatsapp Icon. ", $themename ) ),
+
+
+
+
+    array( "name" => esc_html__( "Show StumbleUpon Icon", $themename ),
+           "id" => $shortname."_show_stumbleupon_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the StumbleUpon Icon. ", $themename ) ),
+
+
+
     array( "name" => esc_html__( "Show Github Icon", $themename ),
            "id" => $shortname."_show_github_icon",
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Github Icon. ", $themename ) ),
+
+    array( "name" => esc_html__( "Show Steam Icon", $themename ),
+           "id" => $shortname."_show_steam_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Steam Icon. ", $themename ) ),
+
+
+    array( "name" => esc_html__( "Show Reddit Icon", $themename ),
+           "id" => $shortname."_show_reddit_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Reddit Icon. ", $themename ) ),
+
+    array( "name" => esc_html__( "Show Digg Icon", $themename ),
+           "id" => $shortname."_show_digg_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Digg Icon. ", $themename ) ),
+
+
+    array( "name" => esc_html__( "Show Twitch Icon", $themename ),
+           "id" => $shortname."_show_twitch_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Twitch Icon. ", $themename ) ),
 
 
     array( "name" => esc_html__( "Show Youtube Icon", $themename ),
@@ -34,6 +77,70 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Tumblr Icon. ", $themename ) ),
+
+    array( "name" => esc_html__( "Show StackOverflow Icon", $themename ),
+           "id" => $shortname."_show_stackOverflow_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the StackOverflow Icon. ", $themename ) ),
+
+    array( "name" => esc_html__( "Show Renren Icon", $themename ),
+           "id" => $shortname."_show_renren_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Renren Icon. ", $themename ) ),
+
+    array( "name" => esc_html__( "Show Weibo Icon", $themename ),
+           "id" => $shortname."_show_weibo_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Weibo Icon. ", $themename ) ),
+
+    array( "name" => esc_html__( "Show Snapchat Icon", $themename ),
+           "id" => $shortname."_show_snapchat_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Snapchat Icon. ", $themename ) ),
+
+    // TODO
+    array( "name" => esc_html__( "Show Discord Icon", $themename ),
+           "id" => $shortname."_show_discord_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Discord Icon. ", $themename ) ),
+
+    // TODO
+    array( "name" => esc_html__( "Show Tiktok Icon", $themename ),
+           "id" => $shortname."_show_tiktok_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Tiktok Icon. ", $themename ) ),
+
+    array( "name" => esc_html__( "Show Soundcloud Icon", $themename ),
+           "id" => $shortname."_show_soundcloud_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Soundcloud Icon. ", $themename ) ),
+
+    array( "name" => esc_html__( "Show Vine Icon", $themename ),
+           "id" => $shortname."_show_vine_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Vine Icon. ", $themename ) ),
+
+    // TODO
+    array( "name" => esc_html__( "Show XBox Icon", $themename ),
+           "id" => $shortname."_show_xbox_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the XBox Icon. ", $themename ) ),
+
+    array( "name" => esc_html__( "Show Dribbble Icon", $themename ),
+           "id" => $shortname."_show_dribbble_icon",
+           "type" => "checkbox",
+           "std" => "off",
+           "desc" => esc_html__( "Here you can choose to display the Dribbble Icon. ", $themename ) ),
+
 
 
     array( "name" => esc_html__( "Show Skype Icon", $themename ),
