@@ -9,7 +9,6 @@ Tags: responsive-layout,one-column,two-columns,three-columns,four-columns,left-s
 Version: 2.0.2
 GitHub Theme URI: webbouwer/Divi-White
 GitHub Theme URI: https://github.com/webbouwer/Divi-White
-
 */
 
 /*
@@ -17,34 +16,30 @@ http://astronautweb.co/snippet/font-awesome/
 https://divi-magazine.com/using-font-awesome-with-divi/
 */
 
-
 .et-social-github a.icon:before {
     content: "\f113"; /* fa-github-alt */
     font-family: "FontAwesome" !important;
 }
-
-
-
-
 .et-social-whatsapp a.icon:before {
-    content: "\f232" /* ? fa-whatsapp f232 ? f0ac globe */
+    content: "\f232"; /* TODO: fa-whatsapp f232 ? f0ac globe */
     font-family: "FontAwesome" !important;
 }
-
 .et-social-discord a.icon:before {
-    content: "\f0ac"; /* ? fa-discord  f392 ? f0ac globe */
+    content: "\f0ac"; /* TODO: fa-discord  f392 ? f0ac globe */
     font-family: "FontAwesome" !important;
 }
 .et-social-tiktok a.icon:before {
-    content: "\f0ac"; /* ? fa-tiktok f232 ? f0ac globe */
+    content: "\f0ac"; /* TODO: fa-tiktok f232 ? f0ac globe */
     font-family: "FontAwesome" !important;
 }
 .et-social-snapchat a.icon:before {
-    content: "\f0ac"; /* fa-snapchat-ghost / fa-snapchat f2ab / f0ac globe */
+    content: "\f0ac"; /* TODO: fa-snapchat-ghost / fa-snapchat f2ab / f0ac globe */
     font-family: "FontAwesome" !important;
 }
-
-
+.et-social-stumbleupon a.icon:before {
+    content: "\f1a4"; /* TODO: fa-stumbleupon */
+    font-family: "FontAwesome" !important;
+}
 .et-social-steam a.icon:before {
     content: "\f1b6"; /* fa-steam  */
     font-family: "FontAwesome" !important;
@@ -61,15 +56,54 @@ https://divi-magazine.com/using-font-awesome-with-divi/
     content: "\f1e8"; /* fa-twitch  */
     font-family: "FontAwesome" !important;
 }
-
-
-
 .et-social-youtube a.icon:before {
     content: "\f16a"; /*  fa-youtube-play  */
     font-family: "FontAwesome" !important;
 }
 .et-social-tumblr a.icon:before {
     content: "\f174"; /*  fa-tumblr-square  */
+    font-family: "FontAwesome" !important;
+}
+
+
+.et-social-stackOverflow a.icon:before {
+    content: "\f16c"; /*  TODO: fa-stackOverflow  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-renren a.icon:before {
+    content: "\f18b"; /*  TODO: fa-renren  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-weibo a.icon:before {
+    content: "\f18a"; /*  TODO: fa-weibo  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-snapchat a.icon:before {
+    content: "\f2ab"; /*  TODO: fa-snapchat  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-discord a.icon:before {
+    content: "\f392"; /*  TODO: fa-discord  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-tiktok a.icon:before {
+    content: "\e07b"; /*  TODO: fa-tiktok  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-soundcloud a.icon:before {
+    content: "\f1be"; /*  TODO: fa-soundcloud  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-vine a.icon:before {
+    content: "\f1ca"; /*  TODO: fa-vine  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-xbox a.icon:before {
+    content: "\f412"; /*  TODO: fa-xbox  */
+    font-family: "FontAwesome" !important;
+}
+.et-social-dribbble a.icon:before {
+    content: "\f17d"; /*  TODO: fa-dribbble  */
     font-family: "FontAwesome" !important;
 }
 .et-social-skype a.icon:before {
@@ -84,3 +118,20 @@ https://divi-magazine.com/using-font-awesome-with-divi/
     content: "\f0d3"; /*  fa-pinterest-square  */
     font-family: "FontAwesome" !important;
 }
+.et-social-flickr a.icon:before {
+    content: "\f16e"; /*  fa-flickr */
+    font-family: "FontAwesome" !important;
+}
+.et-social-jsfiddle a.icon:before {
+    content: "\f1cc"; /*  fa-jsfiddle */
+    font-family: "FontAwesome" !important;
+}
+.et-social-bitbucket a.icon:before {
+    content: "\f171"; /*  fa-bitbucket */
+    font-family: "FontAwesome" !important;
+}
+.et-social-codepen a.icon:before {
+    content: "\f1cb"; /*  fa-codepen */
+    font-family: "FontAwesome" !important;
+}
+

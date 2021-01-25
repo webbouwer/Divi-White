@@ -239,6 +239,20 @@ function DW_customize_adaptive(){
 
     // start output css ?>
     <style>
+
+        /* basis adjustment top menu option (unlimited reach) */
+        #top-header > .container
+        {
+            padding-top:0px;
+        }
+        #top-header #et-secondary-nav > li,
+        #top-header #et-info span
+        {
+            display:inline-block;
+            padding-top:15px;
+            font-weight:100;
+        }
+
         <?php if( get_theme_mod('et_divi_header_mainmenu_dropdown', 'default' ) == 'pointer' ){ ?>
 
         <?php
@@ -252,13 +266,14 @@ function DW_customize_adaptive(){
             padding-right: 0px !important;
         }
 
-        #et-top-navigation nav #top-menu .menu-item-has-children > a:after{
-            content:"";
+        #top-header ul .menu-item-has-children > a:first-child:after,
+        #main-header ul .menu-item-has-children > a:first-child:after{
+            content: "";
         }
-        #et-top-navigation nav > ul > li.menu-item-has-children
-        {
-            padding-right: 0px !important;
+        #top-header ul .menu-item-has-children > a:first-child , #main-header ul .menu-item-has-children > a:first-child {
+            padding-right: 0px;
         }
+
         #et-top-navigation nav > ul li,
         .et_pb_button,
         #et-top-navigation nav > ul > li > ul > li,
@@ -269,16 +284,12 @@ function DW_customize_adaptive(){
             letter-spacing:0.04em;*/
         }
 
-
-
-
         #et-top-navigation nav > ul > li > ul
         {
 
-            border-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topweight', 3 );   ?>px solid <?php echo get_theme_mod('et_divi_header_mainmenu_base_color', 'rgba(46,163,242,0.83)' );   ?>;
-            margin-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topmargin', 8 );   ?>px;
+            border-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topweight', 3 ); ?>px solid <?php echo get_theme_mod('et_divi_header_mainmenu_base_color', 'rgba(46,163,242,0.83)' );   ?>;
+            margin-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topmargin', 8 ); ?>px;
             margin-left: -95px;
-
             border-radius:<?php echo get_theme_mod('et_divi_header_mainmenu_submenuradius', 3 );   ?>px;
         }
 
