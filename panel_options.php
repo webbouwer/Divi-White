@@ -265,7 +265,35 @@ $value_options = array (
            "std" => "#",
            "type" => "text",
            "validation_type" => "url",
-		   "desc" => esc_html__( "Enter the URL of your Pinterest Profile. ", $themename ) )
+		   "desc" => esc_html__( "Enter the URL of your Pinterest Profile. ", $themename ) ),
+
+    array( "name" => esc_html__( "Flickr Profile Url", $themename ),
+           "id" => $shortname."_flickr_url",
+           "std" => "#",
+           "type" => "text",
+           "validation_type" => "url",
+		   "desc" => esc_html__( "Enter the URL of your Flickr Profile. ", $themename ) ),
+
+    array( "name" => esc_html__( "JSFiddle Profile Url", $themename ),
+           "id" => $shortname."_jsfiddle_url",
+           "std" => "#",
+           "type" => "text",
+           "validation_type" => "url",
+		   "desc" => esc_html__( "Enter the URL of your JSFiddle Profile. ", $themename ) ),
+
+    array( "name" => esc_html__( "Codepen Profile Url", $themename ),
+           "id" => $shortname."_codepen_url",
+           "std" => "#",
+           "type" => "text",
+           "validation_type" => "url",
+		   "desc" => esc_html__( "Enter the URL of your Codepen Profile. ", $themename ) ),
+
+    array( "name" => esc_html__( "Bitbucket Profile Url", $themename ),
+           "id" => $shortname."_bitbucket_url",
+           "std" => "#",
+           "type" => "text",
+           "validation_type" => "url",
+		   "desc" => esc_html__( "Enter the URL of your Bitbucket Profile. ", $themename ) ) 
 
 );
 
