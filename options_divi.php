@@ -326,6 +326,15 @@ $options = array (
 				   "type" => "checkbox2",
 				   "std" => "false",
 				   "desc" => esc_html__( "Disable translations if you don't want to display translated theme strings on your site.", $themename )
+
+			),
+
+			array(
+				"name" => esc_html__( "Enable Responsive Images", $themename ),
+				"id" => $shortname . "_enable_responsive_images",
+				"type" => "checkbox",
+				"std" => "on",
+				"desc" => esc_html__( "Enable this option to get responsive images size generated when uploading images and adding srcset attribute for images element.", $themename )
 			),
 
 			array( 'name'               => esc_html__( 'Minify And Combine Javascript Files', $themename ),
@@ -336,14 +345,6 @@ $options = array (
 				'hide_option'           => et_load_unminified_scripts(),
 				'hidden_option_message' => esc_html__( 'Divi uses uncombined and unminified javascript files because "SCRIPT_DEBUG" constant on wp-config.php has been set to "true". Other plugin can enforce Divi to use uncombined and unminified javascript files by filtering "et_load_unminified_scripts" filter as well.', $themename ),
 			),
-
-            array(
-                "name" => esc_html__( "Enable Responsive Images", $themename ),
-                "id" => $shortname . "_enable_responsive_images",
-                "type" => "checkbox",
-                "std" => "on",
-                "desc" => esc_html__( "Enable this option to get responsive images size generated when uploading images and adding srcset attribute for images element.", $themename )
-            ),
 
 			array( 'name'               => esc_html__( 'Minify And Combine CSS Files', $themename ),
 				'id'                    => $shortname . '_minify_combine_styles',

@@ -55,7 +55,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								$height = (int) apply_filters( 'et_pb_index_blog_image_height', 675 );
 								$classtext = 'et_featured_image';
 								$titletext = get_the_title();
-								$thumbnail = get_thumbnail( $width, $height, $classtext, $titletext, $titletext, false, 'Blogimage' );
+								$alttext = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+								$thumbnail = get_thumbnail( $width, $height, $classtext, $alttext, $titletext, false, 'Projectimage' );
 								$thumb = $thumbnail["thumb"];
 
 								$post_format = et_pb_post_format();
@@ -68,7 +69,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 										et_core_esc_previously( $first_video )
 									);
 								} else if ( ! in_array( $post_format, array( 'gallery', 'link', 'quote' ) ) && 'on' === et_get_option( 'divi_thumbnails', 'on' ) && '' !== $thumb ) {
-									print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height );
+									print_thumbnail( $thumb, $thumbnail["use_timthumb"], $alttext, $width, $height );
 								} else if ( 'gallery' === $post_format ) {
 									et_pb_gallery_images();
 								}
