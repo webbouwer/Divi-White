@@ -56,7 +56,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								$classtext = 'et_featured_image';
 								$titletext = get_the_title();
 								$alttext = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
-								$thumbnail = get_thumbnail( $width, $height, $classtext, $alttext, $titletext, false, 'Projectimage' );
+								$thumbnail = get_thumbnail( $width, $height, $classtext, $alttext, $titletext, false, 'Blogimage' );
 								$thumb = $thumbnail["thumb"];
 
 								$post_format = et_pb_post_format();

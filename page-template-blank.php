@@ -7,7 +7,7 @@ get_header();
 $post_id = get_the_ID();
 $is_page_builder_used = et_pb_is_pagebuilder_used( $post_id );
 $container_tag = 'product' === get_post_type( $post_id ) ? 'div' : 'article'; ?>
-<div id="main-content">
+ <div id="main-content">
 
 <?php if ( ! $is_page_builder_used ) : ?>
 

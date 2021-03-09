@@ -145,6 +145,13 @@ endif;
 add_action( 'wp_enqueue_scripts', 'DW_parent_css', 10 );
 
 
+/* woocommerce */
+function is_woocommerce_active(){
+  if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+    return true;
+  }
+  return false;
+}
 
 /* extending social links/icons */
 // source: https://diviextended.com/how-to-add-extra-social-media-icons-in-divi/
@@ -233,4 +240,3 @@ add_filter('bp_get_signup_avatar', 'bp_remove_signup_gravatar', 1, 1 );
 if(in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))){
     require_once('includes/woo_customizer_options.php');
 }
-

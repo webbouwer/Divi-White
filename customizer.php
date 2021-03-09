@@ -9,7 +9,7 @@ function DW_theme_customizer( $wp_customize ){
 
     /* Header primairy panels */
     $wp_customize->add_section('dw_custom_header', array(
-        	'title'    => __('DW Header options', $themename),
+        	'title'    => __('Dive White options', $themename),
         	'panel'  => 'et_divi_header_panel',
 			'priority' => 99997,
     ));
@@ -190,7 +190,7 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
-  
+
     // set mobile menu sticky et_divi_mobile_menu
     $wp_customize->add_setting( 'et_divi_mobile_menu_sticky', array(
         'default'    => 1
