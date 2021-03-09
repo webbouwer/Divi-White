@@ -1,10 +1,10 @@
-<?php
+<?php 
 
 global $et_no_results_heading_tag;
 
 if ( empty( $et_no_results_heading_tag ) ){
 
-$et_no_results_heading_tag = 'h1';
+ $et_no_results_heading_tag = 'h1';
 
 }
 
