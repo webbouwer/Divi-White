@@ -149,6 +149,7 @@ class Menu_Image_Plugin {
 				add_image_size($name, $params[0], $params[1], $params[2]);
 			}
 		}
+		global $themename;
 		load_plugin_textdomain( $themename, false, basename( dirname( __FILE__ ) ) . '/languages' );
 	}
 	/**
