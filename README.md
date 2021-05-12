@@ -1,18 +1,25 @@
 
-# Divi-White
-Divi White Child Wordpress Theme
-![enter image description here](https://raw.githubusercontent.com/webbouwer/Divi-White/master/preview.png)
-This wordpress child theme requires the commercial version of Divi theme by Elegant themes installed and working correctly in your wordpress environment.
-After buying and using the Divi theme extensively a quick way was needed to extend and enhance the Divi functionalities with some of the most common (expected) functionalities and a decent set of plugins to completely prepare the Wordpress website installation and move instandly into the Divi wysiwyg frontend design and content placement fase.
+# Divi White
+
+#### Wordpress Child Theme for Divi theme
+
+Enhance Divi functionalities with common (aka missing) functionalities and start installing plugins from preselected plugin bundles.
+
+![Divi White Child](https://raw.githubusercontent.com/webbouwer/Divi-White/master/preview.png)
 
 
-The Divi-White child theme functionalities are of three types;
+Requirements:
+- [ ] Divi Theme paid version (by Elegant themes)
+That's it :)
+
+The Divi White Child theme extended functionalities;
 
   - Core
     - Plugin bundle select: A list of selected plugins available for install
     - Disable the default gravatar icon (if profile pictures are not needed)
     - Enable menu images/decription: icon/image and description in regular menu options
     - Enable the WP linkmanager
+
   - Frontend Customization
     - Menu
       Page section menu links are displayed active on section scroll in view

@@ -9,7 +9,7 @@ function DW_theme_customizer( $wp_customize ){
 
     /* Header primairy panels */
     $wp_customize->add_section('dw_custom_header', array(
-        	'title'    => __('Dive White options', $themename),
+        	'title'    => __('Divi White Header', $themename),
         	'panel'  => 'et_divi_header_panel',
 			'priority' => 99997,
     ));
@@ -65,6 +65,24 @@ function DW_theme_customizer( $wp_customize ){
         )
     );
 
+    /* Adding secondairy options reach top */
+    $wp_customize->add_setting( 'et_divi_header_topmenu_reach' , array(
+        'priority' => '80',
+        'default'    => 1
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'et_divi_header_topmenu_reach',
+            array(
+                'label'          => __( 'Infinity reach', $themename ),
+                'section'   => 'dw_custom_header', // > 'dw_custom_header_primary_menu', //'et_divi_header_information',
+                'settings'  => 'et_divi_header_topmenu_reach',
+                'type'      => 'checkbox',
+            )
+        )
+    );
+
 
     /* Adding default menu dropdown options */
     $wp_customize->add_setting( 'et_divi_header_mainmenu_dropdown' , array(
@@ -73,17 +91,18 @@ function DW_theme_customizer( $wp_customize ){
 		//'sanitize_callback' => 'onepiece_sanitize_default',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'et_divi_header_mainmenu_dropdown', array(
-            'label'          => __( 'Custom dropdown', $themename ),
+            'label'          => __( 'Primary menu dropdown', $themename ),
             'section'        => 'dw_custom_header', // > 'et_divi_header_primary',
             'settings'       => 'et_divi_header_mainmenu_dropdown',
             'type'           => 'select',
- 	    	'description'    => __( 'Select primary menu dropdown type', $themename ),
+ 	    	'description'    => __( 'Customize primary menu dropdown type', $themename ),
             'choices'        => array(
                 	'default'   => __( 'Default', $themename ),
                 	'pointer'   => __( 'Pointer block', $themename ),
                 	'horizontal'   => __( 'Horizontal Menu', $themename ),
         )
     )));
+
 
     // height distance
     $wp_customize->add_setting( 'et_divi_header_mainmenu_topmargin' , array(
@@ -95,7 +114,7 @@ function DW_theme_customizer( $wp_customize ){
     $wp_customize->add_control( 'et_divi_header_mainmenu_topmargin', array(
         'type' => 'range',
         'section' => 'dw_custom_header',
-        'label' => __( 'Submenu top margin' ),
+        'label' => __( 'Pointer menu top margin' ),
         //'description' => __( 'Determine submenu top border and pointer weight.' ),
         'input_attrs' => array(
             'min' => -50,
@@ -111,17 +130,39 @@ function DW_theme_customizer( $wp_customize ){
 		//'sanitize_callback' => 'onepiece_sanitize_default',
     ));
 
+
+
     $wp_customize->add_control( 'et_divi_header_mainmenu_topweight', array(
         'type' => 'range',
         'section' => 'dw_custom_header',
-        'label' => __( 'Submenu top pointer weight' ),
+        'label' => __( 'Pointer weight' ),
         //'description' => __( 'Determine submenu top border and pointer weight.' ),
         'input_attrs' => array(
             'min' => 1,
-            'max' => 20,
+            'max' => 30,
             'step' => 1,
         ),
     ));
+
+    // top border
+    $wp_customize->add_setting( 'et_divi_header_mainmenu_topborderweight' , array(
+    'default' => 3,
+        'priority' => '81',
+    //'sanitize_callback' => 'onepiece_sanitize_default',
+    ));
+
+    $wp_customize->add_control( 'et_divi_header_mainmenu_topborderweight', array(
+        'type' => 'range',
+        'section' => 'dw_custom_header',
+        'label' => __( 'Top border weight' ),
+        //'description' => __( 'Determine submenu top border and pointer weight.' ),
+        'input_attrs' => array(
+            'min' => 0,
+            'max' => 30,
+            'step' => 1,
+        ),
+    ));
+
 
     // rounded corners
     $wp_customize->add_setting( 'et_divi_header_mainmenu_submenuradius' , array(
@@ -133,7 +174,7 @@ function DW_theme_customizer( $wp_customize ){
     $wp_customize->add_control( 'et_divi_header_mainmenu_submenuradius', array(
         'type' => 'range',
         'section' => 'dw_custom_header',
-        'label' => __( 'Submenu rounded corners' ),
+        'label' => __( 'Pointer menu rounded corners' ),
         //'description' => __( 'Determine submenu top border and pointer weight.' ),
         'input_attrs' => array(
             'min' => 0,
@@ -150,7 +191,7 @@ function DW_theme_customizer( $wp_customize ){
     	));
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'et_divi_header_mainmenu_base_color', array(
-		'label' => __( 'Custom dropdown top color', $themename ),
+		'label' => __( 'Pointer and top border color', $themename ),
 		 'section' => 'dw_custom_header', // > 'et_divi_header_primary',
 		'settings' => 'et_divi_header_mainmenu_base_color',
         'show_opacity' => true,
@@ -164,7 +205,7 @@ function DW_theme_customizer( $wp_customize ){
     	));
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'et_divi_header_mainmenu_optionbg_color', array(
-		'label' => __( 'Custom dropdown option bg color', $themename ),
+		'label' => __( 'Pointer menu option hover background', $themename ),
 		 'section' => 'dw_custom_header', // > 'et_divi_header_primary',
 		'settings' => 'et_divi_header_mainmenu_optionbg_color',
         'show_opacity' => true,
@@ -240,7 +281,9 @@ function DW_customize_adaptive(){
     // start output css ?>
     <style>
 
-        /* basis adjustment top menu option (unlimited reach) */
+
+        <?php if( get_theme_mod('et_divi_header_topmenu_reach', 1 ) == 1 ){ ?>
+        /* basis adjustment top menu option (unlimited reach)*/
         #top-header > .container
         {
             padding-top:0px;
@@ -249,9 +292,13 @@ function DW_customize_adaptive(){
         #top-header #et-info span
         {
             display:inline-block;
-            padding-top:15px;
-            font-weight:100;
+            padding-top:11px;
         }
+        #top-header ul.menu > .menu-item-has-children > a:first-child:after
+        {
+          padding-top:11px;
+        }
+        <?php } ?>
 
         <?php if( get_theme_mod('et_divi_header_mainmenu_dropdown', 'default' ) == 'pointer' ){ ?>
 
@@ -266,11 +313,14 @@ function DW_customize_adaptive(){
             padding-right: 0px !important;
         }
 
-        #top-header ul .menu-item-has-children > a:first-child:after,
+
+        /* #top-header ul .menu-item-has-children > a:first-child:after, */
         #main-header ul .menu-item-has-children > a:first-child:after{
             content: "";
+            display: none;
         }
-        #top-header ul .menu-item-has-children > a:first-child , #main-header ul .menu-item-has-children > a:first-child {
+        /* #top-header ul.menu > .menu-item-has-children > a:first-child, */
+        #main-header ul .menu-item-has-children > a:first-child {
             padding-right: 0px;
         }
 
@@ -287,7 +337,7 @@ function DW_customize_adaptive(){
         #et-top-navigation nav > ul > li > ul
         {
 
-            border-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topweight', 3 ); ?>px solid <?php echo get_theme_mod('et_divi_header_mainmenu_base_color', 'rgba(46,163,242,0.83)' );   ?>;
+            border-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topborderweight', 0 ); ?>px solid <?php echo get_theme_mod('et_divi_header_mainmenu_base_color', 'rgba(46,163,242,0.83)' );   ?>;
             margin-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topmargin', 8 ); ?>px;
             margin-left: -95px;
             border-radius:<?php echo get_theme_mod('et_divi_header_mainmenu_submenuradius', 3 );   ?>px;
@@ -295,7 +345,7 @@ function DW_customize_adaptive(){
 
         #et-top-navigation nav > ul > li > ul li ul
         {
-            border-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topweight', 3 );   ?>px solid <?php echo get_theme_mod('et_divi_header_mainmenu_base_color', 'rgba(46,163,242,0.83)' );   ?>;
+            border-top: <?php echo get_theme_mod('et_divi_header_mainmenu_topborderweight', 0 );   ?>px solid <?php echo get_theme_mod('et_divi_header_mainmenu_base_color', 'rgba(46,163,242,0.83)' );   ?>;
             margin-top: -<?php echo (get_theme_mod('et_divi_header_mainmenu_topweight', 3 ) - get_theme_mod('et_divi_header_mainmenu_submenuradius', 3 ) ); ?>px;
             border-radius:<?php echo get_theme_mod('et_divi_header_mainmenu_submenuradius', 3 );   ?>px;
         }
@@ -333,7 +383,7 @@ function DW_customize_adaptive(){
         <?php }else if( get_theme_mod('et_divi_header_mainmenu_dropdown', 'default' ) == 'horizontal' ){ ?>
 
 
-        <?php $size = get_theme_mod('et_divi_header_mainmenu_topweight', 0 );   ?>
+        <?php $size = get_theme_mod('et_divi_header_mainmenu_topborderweight', 0 );   ?>
         <?php $fixedheight = get_theme_mod('et_divi_minimized_menu_height', 40 ); ?>
             /* primary menu sub levels horizontal */
             .nav li ul{
