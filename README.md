@@ -5,7 +5,7 @@
 
 Enhance Divi functionalities with common (aka missing) functionalities and start installing plugins from preselected plugin bundles.
 
-![Divi White Child](https://raw.githubusercontent.com/webbouwer/Divi-White/master/preview.png)
+![Divi White Child](https://github.com/webbouwer/Divi-White/blob/master/preview.png)
 
 
 Requirements:
