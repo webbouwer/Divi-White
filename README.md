@@ -1,5 +1,5 @@
 
-# Divi White
+# Divi White Child
 
 #### Wordpress Child Theme for Divi theme
 
@@ -25,11 +25,23 @@ The Divi White Child theme extended functionalities;
       Page section menu links are displayed active on section scroll in view
 
     - Customizer
-      - secondary menu bar: display on/off
-      - header mainmenu homepage below first section: display on/off
-      - header elements: display shadow on/off
-      - Mobile styles: header mobile sticky on/off
-      - Footer elements: footer sticky on/off
+      - Header & Navigation
+        - Header Format
+          - + Enable Vertical Navigation (!experimental horizontal submenu)
+        - + Divi White Header        
+          - Secondary menu bar display on/off
+            Choose to display the secondairy (top) menu even if a menu or plugin with menu options is set.
+          - Fixed menu page section on/off
+            Finds mainmenu page links and controls linked sections scroll position (Javascript function 'setPageActiveMenuLink')
+          - Header shadow display on/off
+            Removes shadow line beneath the mainmenu bar
+      - Mobile styles
+        - + Header mobile sticky on/off
+          Choose to make the default (collapsed) mobile menu sticky on top
+      - Footer
+        - Footer Elements
+          - + Footer sticky on/off
+            Make the footerbar stick on the bottom if the page content does not reach window bottom (pure css)
 
    - Divi social urls/icons
 
