@@ -12,6 +12,11 @@ if ( post_password_required() ) : ?>
 ?>
 <!-- You can start editing here. -->
 
+<?php
+if ( empty( $comments_by_type ) ) {
+$comments_by_type = separate_comments( $comments );
+}
+?>
 <section id="comment-wrap">
 	<<?php echo et_core_intentionally_unescaped( $et_comments_header_level_processed, 'fixed_string' ); ?> id="comments" class="page_title"><?php comments_number( esc_html__( '0 Comments', 'et_builder' ), esc_html__( '1 Comment', 'et_builder' ), '% ' . esc_html__( 'Comments', 'et_builder' ) ); ?></<?php echo et_core_intentionally_unescaped( $et_comments_header_level_processed, 'fixed_string' ); ?>>
 	<?php if ( have_comments() ) : ?>

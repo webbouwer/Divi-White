@@ -8,6 +8,11 @@
 ?>
 <!-- You can start editing here. -->
 
+<?php
+if ( empty( $comments_by_type ) ) {
+	$comments_by_type = separate_comments( $comments );
+}
+?>
 <section id="comment-wrap">
 <?php if ( have_comments() && ! empty( $comments_by_type['comment'] ) ) : ?>
 	<h1 id="comments" class="page_title"><?php comments_number( esc_html__( '0 Comments', 'Divi' ), esc_html__( '1 Comment', 'Divi' ), '% ' . esc_html__( 'Comments', 'Divi' ) ); ?></h1>
