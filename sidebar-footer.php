@@ -11,8 +11,8 @@ if ( $et_active_sidebars === false ) {
 		foreach ( $et_active_sidebars as $footer_sidebar ) :
 			echo '<div class="footer-widget">';
 			dynamic_sidebar( $footer_sidebar );
-			echo '</div> <!-- end .footer-widget -->';
+			echo '</div>';
 		endforeach;
 		?>
-    </div> <!-- #footer-widgets -->
-</div>    <!-- .container -->
+    </div>
+</div>
