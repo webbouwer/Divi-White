@@ -6,12 +6,12 @@
             <div id="left-area">
                 <article id="post-0" <?php post_class( 'et_pb_post not_found' ); ?>>
                     <?php get_template_part( 'includes/no-results', '404' ); ?>
-                </article> <!-- .et_pb_post -->
-            </div> <!-- #left-area -->
+                </article>
+            </div>
 
             <?php get_sidebar(); ?>
-        </div> <!-- #content-area -->
-    </div> <!-- .container -->
-</div> <!-- #main-content -->
+        </div>
+    </div>
+</div>
 <?php
 get_footer();

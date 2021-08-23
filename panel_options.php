@@ -21,16 +21,11 @@ $enable_options = array (
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Whatsapp Icon. ", $themename ) ),
 
-
-
-
     array( "name" => esc_html__( "Show StumbleUpon Icon", $themename ),
            "id" => $shortname."_show_stumbleupon_icon",
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the StumbleUpon Icon. ", $themename ) ),
-
-
 
     array( "name" => esc_html__( "Show Github Icon", $themename ),
            "id" => $shortname."_show_github_icon",
@@ -77,7 +72,8 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Tumblr Icon. ", $themename ) ),
-
+		/*
+		// TODO
     array( "name" => esc_html__( "Show StackOverflow Icon", $themename ),
            "id" => $shortname."_show_stackOverflow_icon",
            "type" => "checkbox",
@@ -102,14 +98,12 @@ $enable_options = array (
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Snapchat Icon. ", $themename ) ),
 
-    // TODO
     array( "name" => esc_html__( "Show Discord Icon", $themename ),
            "id" => $shortname."_show_discord_icon",
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Discord Icon. ", $themename ) ),
 
-    // TODO
     array( "name" => esc_html__( "Show Tiktok Icon", $themename ),
            "id" => $shortname."_show_tiktok_icon",
            "type" => "checkbox",
@@ -128,7 +122,6 @@ $enable_options = array (
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Vine Icon. ", $themename ) ),
 
-    // TODO
     array( "name" => esc_html__( "Show XBox Icon", $themename ),
            "id" => $shortname."_show_xbox_icon",
            "type" => "checkbox",
@@ -140,9 +133,7 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Dribbble Icon. ", $themename ) ),
-
-
-
+		*/
     array( "name" => esc_html__( "Show Skype Icon", $themename ),
            "id" => $shortname."_show_skype_icon",
            "type" => "checkbox",
@@ -166,13 +157,7 @@ $enable_options = array (
            "type" => "checkbox",
            "std" => "off",
            "desc" => esc_html__( "Here you can choose to display the Flickr Icon. ", $themename ) ),
-/*
-    array( "name" => esc_html__( "Show Xbox Icon", $themename ),
-           "id" => $shortname."_show_xbox_icon",
-           "type" => "checkbox",
-           "std" => "off",
-           "desc" => esc_html__( "Here you can choose to display the Xbox Icon. ", $themename ) ),
-*/
+
     array( "name" => esc_html__( "Show JSFiddle Icon", $themename ),
            "id" => $shortname."_show_jsfiddle_icon",
            "type" => "checkbox",
@@ -225,12 +210,54 @@ $value_options = array (
            "validation_type" => "url",
 		   "desc" => esc_html__( "Enter the URL of your LinkedIn Profile. ", $themename ) ),
 
+	array( "name" => esc_html__( "Whatsapp number (int)", $themename ),
+		     "id" => $shortname."_whatsapp_url",
+		     "std" => "#",
+		     "type" => "text",
+		     "validation_type" => "url",
+		 	"desc" => esc_html__( "Enter the full international phonenumber for Whatsapp. ", $themename ) ),
+
+			array( "name" => esc_html__( "StumbleUpon Profile Url", $themename ),
+	           "id" => $shortname."_stumbleupon_url",
+	           "std" => "#",
+	           "type" => "text",
+	           "validation_type" => "url",
+			   "desc" => esc_html__( "Enter the URL of your StumbleUpon Profile. ", $themename ) ),
+
     array( "name" => esc_html__( "Github Profile Url", $themename ),
            "id" => $shortname."_github_url",
            "std" => "#",
            "type" => "text",
            "validation_type" => "url",
 		   "desc" => esc_html__( "Enter the URL of your Github Profile. ", $themename ) ),
+
+		array( "name" => esc_html__( "Steam Profile Url", $themename ),
+	            "id" => $shortname."_steam_url",
+	            "std" => "#",
+	            "type" => "text",
+	            "validation_type" => "url",
+	 		   "desc" => esc_html__( "Enter the URL of your Steam Profile. ", $themename ) ),
+
+		array( "name" => esc_html__( "Reddit Profile Url", $themename ),
+		 	         "id" => $shortname."_reddit_url",
+		 	         "std" => "#",
+		 	         "type" => "text",
+		 	         "validation_type" => "url",
+		 	 		"desc" => esc_html__( "Enter the URL of your Reddit Profile. ", $themename ) ),
+
+		array( "name" => esc_html__( "Digg Profile Url", $themename ),
+							"id" => $shortname."_digg_url",
+							"std" => "#",
+							"type" => "text",
+							"validation_type" => "url",
+				"desc" => esc_html__( "Enter the URL of your Digg Profile. ", $themename ) ),
+
+		array( "name" => esc_html__( "Twitch Profile Url", $themename ),
+							"id" => $shortname."_twitch_url",
+							"std" => "#",
+							"type" => "text",
+							"validation_type" => "url",
+					"desc" => esc_html__( "Enter the URL of your Twitch Profile. ", $themename ) ),
 
     array( "name" => esc_html__( "Youtube Profile Url", $themename ),
            "id" => $shortname."_youtube_url",
@@ -245,6 +272,20 @@ $value_options = array (
            "type" => "text",
            "validation_type" => "url",
 		   "desc" => esc_html__( "Enter the URL of your Tumblr Profile. ", $themename ) ),
+
+		/*
+		StackOverflow
+		Renren
+		Weibo
+		Snapchat
+		Discord
+		Tiktok
+		Soundcloud
+		Vine
+		XBox
+		Dribbble
+		*/
+
 
     array( "name" => esc_html__( "Skype Profile Url", $themename ),
            "id" => $shortname."_skype_url",
@@ -293,8 +334,12 @@ $value_options = array (
            "std" => "#",
            "type" => "text",
            "validation_type" => "url",
-		   "desc" => esc_html__( "Enter the URL of your Bitbucket Profile. ", $themename ) ) 
+		   "desc" => esc_html__( "Enter the URL of your Bitbucket Profile. ", $themename ) )
 
+			/*
+			Codeshare
+			JS Bin
+			*/
 );
 
 foreach( $options as $index => $value ) {

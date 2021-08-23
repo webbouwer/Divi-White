@@ -6,7 +6,6 @@
 		return;
 	endif;
 ?>
-<!-- You can start editing here. -->
 
 <?php
 if ( empty( $comments_by_type ) ) {
@@ -22,7 +21,7 @@ if ( empty( $comments_by_type ) ) {
 			<div class="comment_navigation_top clearfix">
 				<div class="nav-previous"><?php previous_comments_link( et_get_safe_localization( __( '<span class="meta-nav">&larr;</span> Older Comments', 'Divi' ) ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( et_get_safe_localization( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'Divi' ) ) ); ?></div>
-			</div> <!-- .navigation -->
+			</div>
 		<?php endif; // check for comment navigation ?>
 
 		<?php if ( ! empty($comments_by_type['comment']) ) : ?>
@@ -35,7 +34,7 @@ if ( empty( $comments_by_type ) ) {
 			<div class="comment_navigation_bottom clearfix">
 				<div class="nav-previous"><?php previous_comments_link( et_get_safe_localization( __( '<span class="meta-nav">&larr;</span> Older Comments', 'Divi' ) ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( et_get_safe_localization( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'Divi' ) ) ); ?></div>
-			</div> <!-- .navigation -->
+			</div>
 		<?php endif; // check for comment navigation ?>
 
 		<?php if ( ! empty($comments_by_type['pings']) ) : ?>
@@ -49,10 +48,8 @@ if ( empty( $comments_by_type ) ) {
 	<?php else : // this is displayed if there are no comments so far ?>
 	   <div id="comment-section" class="nocomments">
 		  <?php if ('open' === $post->comment_status) : ?>
-			 <!-- If comments are open, but there are no comments. -->
 
 		  <?php else : // comments are closed ?>
-			 <!-- If comments are closed. -->
 
 		  <?php endif; ?>
 	   </div>

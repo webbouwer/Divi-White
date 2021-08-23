@@ -127,7 +127,7 @@
 		</a>
 	</li>
 <?php endif; ?>
-<?php /* TODO: new discord icon */
+<?php /* TODO: new discord icon https://fontawesome.com/v5.15/icons/discord?style=brands */
     if ( 'on' === et_get_option( 'divi_show_discord_icon', 'on' ) ) : ?>
 	<li class="et-social-icon et-social-discord">
 		<a href="<?php echo esc_url( et_get_option( 'divi_discord_url', '#' ) ); ?>" class="icon">
@@ -135,7 +135,7 @@
 		</a>
 	</li>
 <?php endif; ?>
-<?php /* TODO: new tiktok icon */
+<?php /* TODO: new tiktok icon  https://fontawesome.com/v5.15/icons/tiktok?style=brands */
     if ( 'on' === et_get_option( 'divi_show_tiktok_icon', 'on' ) ) : ?>
 	<li class="et-social-icon et-social-tiktok">
 		<a href="<?php echo esc_url( et_get_option( 'divi_tiktok_url', '#' ) ); ?>" class="icon">
@@ -237,8 +237,7 @@
 <?php endif; ?>
 
 
-<?php /* original follow */
-    if ( 'on' === et_get_option( 'divi_show_twitter_icon', 'on' ) ) : ?>
+<?php if ( 'on' === et_get_option( 'divi_show_twitter_icon', 'on' ) ) : ?>
 	<li class="et-social-icon et-social-twitter">
 		<a href="<?php echo esc_url( et_get_option( 'divi_twitter_url', '#' ) ); ?>" class="icon">
 			<span><?php esc_html_e( 'Twitter', 'Divi' ); ?></span>
