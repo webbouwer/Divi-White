@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 global $et_no_results_heading_tag;
 
