@@ -25,17 +25,8 @@
 	</script>
 
 	<?php wp_head(); ?>
-		<!-- 5.15.3.0
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
--->
-<!--	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css">
 
- https://fontawesome.com/v5.15/how-to-use/on-the-web/setup/upgrading-from-version-4
-<link href="//use.fontawesome.com/releases/v5.10.1/css/v4-shims.css" rel="stylesheet"> -->
-		<!-- 4.7.0  -->
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-		<!-- 4.2.0 -->
+
 </head>
 <body <?php body_class(); ?>>
 <?php
@@ -63,6 +54,8 @@
 	$et_top_info_defined = $et_secondary_nav_items->top_info_defined;
 
 	$et_slide_header = 'slide' === et_get_option( 'header_style', 'left' ) || 'fullscreen' === et_get_option( 'header_style', 'left' ) ? true : false;
+
+	$show_search_icon = ( false !== et_get_option( 'show_search_icon', true ) && ! $et_slide_header ) || is_customize_preview();
 ?>
 
 	<?php if ( $et_top_info_defined && ! $et_slide_header || is_customize_preview() ) : ?>
@@ -319,11 +312,11 @@
 						<span class="mobile_menu_bar et_pb_header_toggle et_toggle_<?php echo esc_attr( et_get_option( 'header_style', 'left' ) ); ?>_menu"></span>
 					<?php endif; ?>
 
-					<?php if ( ( false !== et_get_option( 'show_search_icon', true ) && ! $et_slide_header ) || is_customize_preview() ) : ?>
+					<?php if ( $show_search_icon ) : ?>
 					<div id="et_top_search">
 						<span id="et_search_icon"></span>
 					</div>
-					<?php endif; // true === et_get_option( 'show_search_icon', false ) ?>
+					<?php endif; ?>
 
 					<?php
 
@@ -335,8 +328,11 @@
 					do_action( 'et_header_top' );
 
 					?>
-				</div>
-			</div>
+				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+
+			<?php if ( $show_search_icon ) : ?>
+
 			<div class="et_search_outer">
 				<div class="container et_search_form_container">
 					<form role="search" method="get" class="et-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -357,7 +353,8 @@
 					<span class="et_close_search_field"></span>
 				</div>
 			</div>
-		</header>
+			<?php endif; ?>
+		</header> <!-- #main-header -->
 	<?php
 		$main_header = ob_get_clean();
 

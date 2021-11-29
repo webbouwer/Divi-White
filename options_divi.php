@@ -164,8 +164,7 @@ $options = array (
 				"desc"              => esc_html__( "Disable this option to remove the Google Fonts from your Divi Builder Pages.", $themename ),
 			),
 
-			array(
-				"name" => esc_html__( "Google Fonts Subsets", $themename ),
+			array( "name" => esc_html__( "Google Fonts Subsets", $themename ),
 				"id" => $shortname . "_gf_enable_all_character_sets",
 				"type" => "checkbox",
 				"std" => "false",
