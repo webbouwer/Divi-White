@@ -36,13 +36,14 @@ $show_navigation = get_post_meta( get_the_ID(), '_et_pb_project_nav', true );
 					$height = (int) apply_filters( 'et_pb_portfolio_single_image_height', 9999 );
 					$classtext = 'et_featured_image';
 					$titletext = get_the_title();
-					$thumbnail = get_thumbnail( $width, $height, $classtext, $titletext, $titletext, false, 'Projectimage' );
+					$alttext = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+					$thumbnail = get_thumbnail( $width, $height, $classtext, $alttext, $titletext, false, 'Projectimage' );
 					$thumb = $thumbnail["thumb"];
 
 					$page_layout = get_post_meta( get_the_ID(), '_et_pb_page_layout', true );
 
 					if ( '' !== $thumb )
-						print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height );
+						print_thumbnail( $thumb, $thumbnail["use_timthumb"], $alttext, $width, $height );
 				?>
 
 				<?php endif; ?>
@@ -54,12 +55,12 @@ $show_navigation = get_post_meta( get_the_ID(), '_et_pb_project_nav', true );
 						if ( ! $is_page_builder_used )
 							wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
 					?>
-					</div> <!-- .entry-content -->
+					</div>
 
 				<?php if ( ! $is_page_builder_used ) : ?>
 
 					<?php
-						if ( in_array( $page_layout, array( 'et_full_width_page', 'et_no_sidebar' ) ) ) {
+						if ( ! in_array( $page_layout, array( 'et_full_width_page', 'et_no_sidebar' ) ) ) {
 							et_pb_portfolio_meta_box();
 						}
 					?>
@@ -71,11 +72,11 @@ $show_navigation = get_post_meta( get_the_ID(), '_et_pb_project_nav', true );
 					<div class="nav-single clearfix">
 						<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . et_get_safe_localization( _x( '&larr;', 'Previous post link', 'Divi' ) ) . '</span> %title' ); ?></span>
 						<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . et_get_safe_localization( _x( '&rarr;', 'Next post link', 'Divi' ) ) . '</span>' ); ?></span>
-					</div><!-- .nav-single -->
+					</div>
 
 				<?php endif; ?>
 
-				</article> <!-- .et_pb_post -->
+				</article>
 
 			<?php
 				if ( ! $is_page_builder_used && comments_open() && 'on' === et_get_option( 'divi_show_postcomments', 'on' ) )
@@ -85,7 +86,7 @@ $show_navigation = get_post_meta( get_the_ID(), '_et_pb_project_nav', true );
 
 <?php if ( ! $is_page_builder_used ) : ?>
 
-			</div> <!-- #left-area -->
+			</div>
 
 			<?php
 				if ( in_array( $page_layout, array( 'et_full_width_page', 'et_no_sidebar' ) ) ) {
@@ -94,13 +95,12 @@ $show_navigation = get_post_meta( get_the_ID(), '_et_pb_project_nav', true );
 			?>
 
 			<?php get_sidebar(); ?>
-		</div> <!-- #content-area -->
-	</div> <!-- .container -->
+		</div>
+	</div>
 
 <?php endif; ?>
 
-</div> <!-- #main-content -->
-
+</div>
 <?php
 
 get_footer();

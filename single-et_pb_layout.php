@@ -14,13 +14,13 @@ get_header();
 		<?php
 			the_content();
 		?>
-		</div> <!-- .entry-content -->
+		</div>
 
-	</article> <!-- .et_pb_post -->
+	</article>
 
 <?php endwhile; ?>
 
-</div> <!-- #main-content -->
+</div>
 
 <?php
 

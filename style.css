@@ -6,81 +6,144 @@ Author: Webbouwer
 Author URI: https://webdesigndenhaag.net
 Description: Smart. Flexible. Beautiful and customized. Divi White is the customizable child theme for the most powerful theme created for Wordpress.
 Tags: responsive-layout,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar,custom-background,custom-colors,featured-images,full-width-template,post-formats,rtl-language-support,theme-options,threaded-comments,translation-ready
-Version: 2.0.2
+Version: 2.0.6
 GitHub Theme URI: webbouwer/Divi-White
 GitHub Theme URI: https://github.com/webbouwer/Divi-White
-
 */
 
 /*
 http://astronautweb.co/snippet/font-awesome/
 https://divi-magazine.com/using-font-awesome-with-divi/
 */
-
-
-.et-social-github a.icon:before {
-    content: "\f113"; /* fa-github-alt */
-    font-family: "FontAwesome" !important;
+/
+.et-social-github a.icon::before {
+    font-family: "FontAwesome"; /*"Font Awesome 5 Free"; */
+    font-weight: 400;
+    content: "\f09b"; /* "\f113"; fa-github-alt */
 }
-
-
-
-
-.et-social-whatsapp a.icon:before {
-    content: "\f232" /* ? fa-whatsapp f232 ? f0ac globe */
-    font-family: "FontAwesome" !important;
-}
-
-.et-social-discord a.icon:before {
-    content: "\f0ac"; /* ? fa-discord  f392 ? f0ac globe */
-    font-family: "FontAwesome" !important;
-}
-.et-social-tiktok a.icon:before {
-    content: "\f0ac"; /* ? fa-tiktok f232 ? f0ac globe */
-    font-family: "FontAwesome" !important;
-}
-.et-social-snapchat a.icon:before {
-    content: "\f0ac"; /* fa-snapchat-ghost / fa-snapchat f2ab / f0ac globe */
-    font-family: "FontAwesome" !important;
-}
-
-
-.et-social-steam a.icon:before {
+.et-social-steam a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
     content: "\f1b6"; /* fa-steam  */
-    font-family: "FontAwesome" !important;
 }
-.et-social-reddit a.icon:before {
+.et-social-reddit a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
     content: "\f1a1"; /* fa-reddit-alien fa-reddit f1a1   */
-    font-family: "FontAwesome" !important;
 }
-.et-social-digg a.icon:before {
+.et-social-digg a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
     content: "\f1a6"; /* fa-digg f1a6   */
-    font-family: "FontAwesome" !important;
 }
-.et-social-twitch a.icon:before {
+.et-social-twitch a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
     content: "\f1e8"; /* fa-twitch  */
-    font-family: "FontAwesome" !important;
 }
-
-
-
-.et-social-youtube a.icon:before {
+.et-social-youtube a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
     content: "\f16a"; /*  fa-youtube-play  */
-    font-family: "FontAwesome" !important;
 }
-.et-social-tumblr a.icon:before {
+.et-social-tumblr a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
     content: "\f174"; /*  fa-tumblr-square  */
-    font-family: "FontAwesome" !important;
 }
-.et-social-skype a.icon:before {
+.et-social-skype a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
     content: "\f17e"; /*  fa-fa-skype  */
-    font-family: "FontAwesome" !important;
 }
-.et-social-vimeo a.icon:before {
+.et-social-vimeo a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
     content: "\f194"; /*  fa-vimeo-square  */
-    font-family: "FontAwesome" !important;
 }
-.et-social-pinterest a.icon:before {
+.et-social-pinterest a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
     content: "\f0d3"; /*  fa-pinterest-square  */
-    font-family: "FontAwesome" !important;
+}
+.et-social-flickr a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f16e"; /*  fa-flickr */
+}
+.et-social-jsfiddle a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f1cc"; /*  fa-jsfiddle */
+}
+.et-social-bitbucket a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f171"; /*  fa-bitbucket */
+}
+.et-social-codepen a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f1cb"; /*  fa-codepen */
+}
+
+.et-social-whatsapp a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f232"; /* TODO: fa-whatsapp f232 ? f0ac globe */
+}
+.et-social-discord a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f0ac"; /* TODO: fa-discord  f392 ? f0ac globe */
+}
+.et-social-snapchat a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f0ac"; /* TODO: fa-snapchat-ghost / fa-snapchat f2ab / f0ac globe */
+}
+.et-social-stumbleupon a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f1a4"; /* TODO: fa-stumbleupon */
+}
+.et-social-stackOverflow a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f16c"; /*  TODO: fa-stackOverflow  */
+}
+.et-social-renren a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f18b"; /*  TODO: fa-renren  */
+}
+.et-social-weibo a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f18a"; /*  TODO: fa-weibo  */
+}
+.et-social-tiktok a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\e07b"; /*  TODO: fa-tiktok  */
+}
+.et-social-soundcloud a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f1be"; /*  TODO: fa-soundcloud  */
+}
+.et-social-vine a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f1ca"; /*  TODO: fa-vine  */
+}
+.et-social-xbox a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f412"; /*  TODO: fa-xbox  */
+}
+.et-social-dribbble a.icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f17d"; /*  TODO: fa-dribbble  */
 }

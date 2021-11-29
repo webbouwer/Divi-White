@@ -19,9 +19,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					<?php
 						the_content();
 					?>
-					</div> <!-- .entry-content -->
+					</div>
 
-				</article> <!-- .et_pb_post -->
+				</article>
 
 		<?php endwhile;
 		else:
@@ -55,7 +55,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								$height = (int) apply_filters( 'et_pb_index_blog_image_height', 675 );
 								$classtext = 'et_featured_image';
 								$titletext = get_the_title();
-								$thumbnail = get_thumbnail( $width, $height, $classtext, $titletext, $titletext, false, 'Blogimage' );
+								$alttext = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+								$thumbnail = get_thumbnail( $width, $height, $classtext, $alttext, $titletext, false, 'Blogimage' );
 								$thumb = $thumbnail["thumb"];
 
 								$post_format = et_pb_post_format();
@@ -68,7 +69,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 										et_core_esc_previously( $first_video )
 									);
 								} else if ( ! in_array( $post_format, array( 'gallery', 'link', 'quote' ) ) && 'on' === et_get_option( 'divi_thumbnails', 'on' ) && '' !== $thumb ) {
-									print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height );
+									print_thumbnail( $thumb, $thumbnail["use_timthumb"], $alttext, $width, $height );
 								} else if ( 'gallery' === $post_format ) {
 									et_pb_gallery_images();
 								}
@@ -99,7 +100,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 										printf(
 											'<div class="et_quote_content%2$s"%3$s>
 												%1$s
-											</div> <!-- .et_quote_content -->',
+											</div>',
 											et_core_esc_previously( et_get_blockquote_in_content() ),
 											esc_attr( $text_color_class ),
 											et_core_esc_previously( $inline_style )
@@ -110,7 +111,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 										printf(
 											'<div class="et_link_content%3$s"%4$s>
 												<a href="%1$s" class="et_link_main_url">%2$s</a>
-											</div> <!-- .et_link_content -->',
+											</div>',
 											esc_url( et_get_link_url() ),
 											esc_html( et_get_link_url() ),
 											esc_attr( $text_color_class ),
@@ -122,7 +123,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 							endif;
 						?>
-					</div> <!-- .et_post_meta_wrapper -->
+					</div>
 				<?php  } ?>
 
 					<div class="entry-content">
@@ -133,7 +134,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 						wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
 					?>
-					</div> <!-- .entry-content -->
+					</div>
 					<div class="et_post_meta_wrapper">
 					<?php
 					if ( et_get_option('divi_468_enable') === 'on' ){
@@ -142,7 +143,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						else { ?>
 							<a href="<?php echo esc_url(et_get_option('divi_468_url')); ?>"><img src="<?php echo esc_attr(et_get_option('divi_468_image')); ?>" alt="468" class="foursixeight" /></a>
 				<?php 	}
-						echo '</div> <!-- .et-single-post-ad -->';
+						echo '</div>';
 					}
 
 					/**
@@ -156,17 +157,17 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 							comments_template( '', true );
 						}
 					?>
-					</div> <!-- .et_post_meta_wrapper -->
-				</article> <!-- .et_pb_post -->
+					</div>
+				</article>
 
 			<?php endwhile; ?>
-			</div> <!-- #left-area -->
+			</div> 
 
 			<?php get_sidebar(); ?>
-		</div> <!-- #content-area -->
-	</div> <!-- .container -->
+		</div>
+	</div>
 	<?php endif; ?>
-</div> <!-- #main-content -->
+</div>
 
 <?php
 

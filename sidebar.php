@@ -6,6 +6,6 @@ if ( ( is_single() || is_page() ) && in_array( get_post_meta( get_queried_object
 if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<div id="sidebar">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</div> <!-- end #sidebar -->
+	</div>
 <?php
 endif;

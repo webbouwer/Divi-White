@@ -55,9 +55,7 @@ if ( is_rtl() ) {
 	$default_sidebar_class = 'et_right_sidebar';
 }
 
-// Remove option-based filter output on theme options loading
-remove_filter( 'et_load_unminified_scripts', 'et_divi_load_unminified_scripts' );
-remove_filter( 'et_load_unminified_styles', 'et_divi_load_unminified_styles' );
+$child_theme_active = is_child_theme();
 
 $options = array (
 
@@ -69,6 +67,10 @@ $options = array (
 			array( "name" => "general-1",
 				   "type" => "subnav-tab",
 				   "desc" => esc_html__( "General", $themename) ),
+
+			array( "name" => "general-2",
+					 "type" => "subnav-tab",
+					 "desc" => esc_html__( "Performance", $themename) ),
 
 		array( "type" => "subnavtab-end",),
 
@@ -152,6 +154,23 @@ $options = array (
 			),
 
 			array(
+				"name"              => esc_html__( "Use Google Fonts", $themename ),
+				"id"                => "et_use_google_fonts",
+				"main_setting_name" => "et_google_api_settings",
+				"sub_setting_name"  => 'use_google_fonts',
+				'is_global'         => true,
+				"type"              => "checkbox",
+				"std"               => "on",
+				"desc"              => esc_html__( "Disable this option to remove the Google Fonts from your Divi Builder Pages.", $themename ),
+			),
+
+			array( "name" => esc_html__( "Google Fonts Subsets", $themename ),
+				"id" => $shortname . "_gf_enable_all_character_sets",
+				"type" => "checkbox",
+				"std" => "false",
+				"desc" => esc_html__( "This will enable Google Fonts for Non-English languages.", $themename )
+			),
+			array(
 				"name"              => esc_html__( "Enqueue Google Maps Script", $themename ),
 				"id"                => "et_enqueue_google_maps_script",
 				"main_setting_name" => "et_google_api_settings",
@@ -162,16 +181,6 @@ $options = array (
 				"desc"              => esc_html__( "Disable this option to remove the Google Maps API script from your Divi Builder Pages. This may improve compatibility with third party plugins that also enqueue this script. Please Note: Modules that rely on the Google Maps API in order to function properly, such as the Maps and Fullwidth Maps Modules, will still be available but will not function while this option is disabled (unless you manually add Google Maps API script).", $themename ),
 			),
 
-			array(
-				"name"              => esc_html__( "Use Google Fonts", $themename ),
-				"id"                => "et_use_google_fonts",
-				"main_setting_name" => "et_google_api_settings",
-				"sub_setting_name"  => 'use_google_fonts',
-				'is_global'         => true,
-				"type"              => "checkbox",
-				"std"               => "on",
-				"desc"              => esc_html__( "Disable this option to remove the Google Fonts from your Divi Builder Pages.", $themename ),
-			),
 
 			array( "name" =>esc_html__( "Show Facebook Icon", $themename ),
                    "id" => $shortname . "_show_facebook_icon",
@@ -184,12 +193,6 @@ $options = array (
                    "type" => "checkbox2",
                    "std" => "on",
                    "desc" =>esc_html__( "Here you can choose to display the Twitter Icon. ", $themename ) ),
-
-			array( "name" =>esc_html__( "Show Google+ Icon", $themename ),
-                   "id" => $shortname . "_show_google_icon",
-                   "type" => "checkbox",
-                   "std" => "on",
-                   "desc" =>esc_html__( "Here you can choose to display the Google+ Icon on your homepage. ", $themename ) ),
 
 			array( 'name' => esc_html__( 'Show Instagram Icon', $themename ),
                    'id' => $shortname . '_show_instagram_icon',
@@ -216,13 +219,6 @@ $options = array (
                    "type" => "text",
                    "validation_type" => "url",
 				   "desc" =>esc_html__( "Enter the URL of your Twitter Profile.", $themename ) ),
-
-			array( "name" =>esc_html__( "Google+ Profile Url", $themename ),
-                   "id" => $shortname . "_google_url",
-                   "std" => "#",
-                   "type" => "text",
-                   "validation_type" => "url",
-				   "desc" =>esc_html__( "Enter the URL of your Google+ Profile. ", $themename ) ),
 
 			array( 'name' => esc_html__( 'Instagram Profile Url', $themename ),
                    'id' => $shortname . '_instagram_url',
@@ -293,20 +289,6 @@ $options = array (
 				   "desc" => esc_html__( "This will enable the use of excerpts in posts or pages.", $themename )
 			),
 
-			array( "name" => esc_html__( "Responsive shortcodes", $themename ),
-				   "id" => $shortname . "_responsive_shortcodes",
-				   "type" => "checkbox2",
-				   "std" => "on",
-				   "desc" => esc_html__( "Enable this option to make shortcodes respond to various screen sizes", $themename )
-			),
-
-			array( "name" => esc_html__( "Google Fonts subsets", $themename ),
-				   "id" => $shortname . "_gf_enable_all_character_sets",
-				   "type" => "checkbox",
-				   "std" => "false",
-				   "desc" => esc_html__( "This will enable Google Fonts for Non-English languages.", $themename )
-			),
-
 			array( "name" => esc_html__( "Back To Top Button", $themename ),
 				   "id" => $shortname . "_back_to_top",
 				   "type" => "checkbox2",
@@ -326,32 +308,15 @@ $options = array (
 				   "type" => "checkbox2",
 				   "std" => "false",
 				   "desc" => esc_html__( "Disable translations if you don't want to display translated theme strings on your site.", $themename )
+
 			),
 
-			array( 'name'               => esc_html__( 'Minify And Combine Javascript Files', $themename ),
-				'id'                    => $shortname . '_minify_combine_scripts',
-				'type'                  => 'checkbox',
-				'std'                   => 'on',
-				'desc'                  => esc_html__( 'Use combined and minified javascript file to speed up your site\'s page load.', $themename ),
-				'hide_option'           => et_load_unminified_scripts(),
-				'hidden_option_message' => esc_html__( 'Divi uses uncombined and unminified javascript files because "SCRIPT_DEBUG" constant on wp-config.php has been set to "true". Other plugin can enforce Divi to use uncombined and unminified javascript files by filtering "et_load_unminified_scripts" filter as well.', $themename ),
-			),
-
-            array(
-                "name" => esc_html__( "Enable Responsive Images", $themename ),
-                "id" => $shortname . "_enable_responsive_images",
-                "type" => "checkbox",
-                "std" => "on",
-                "desc" => esc_html__( "Enable this option to get responsive images size generated when uploading images and adding srcset attribute for images element.", $themename )
-            ),
-
-			array( 'name'               => esc_html__( 'Minify And Combine CSS Files', $themename ),
-				'id'                    => $shortname . '_minify_combine_styles',
-				'type'                  => 'checkbox',
-				'std'                   => 'on',
-				'desc'                  => esc_html__( 'Use combined and minified CSS file to speed up your site\'s page load.', $themename ),
-				'hide_option'           => et_load_unminified_styles(),
-				'hidden_option_message' => esc_html__( 'Divi uses uncombined and unminified CSS files because "SCRIPT_DEBUG" constant on wp-config.php has been set to "true". Other plugin can enforce Divi to use uncombined and unminified CSS files by filtering "et_load_unminified_styles" filter as well.', $themename ),
+			array(
+				"name" => esc_html__( "Enable Responsive Images", $themename ),
+				"id" => $shortname . "_enable_responsive_images",
+				"type" => "checkbox",
+				"std" => "on",
+				"desc" => esc_html__( "Enable this option to get responsive images size generated when uploading images and adding srcset attribute for images element.", $themename )
 			),
 
 			array( "name" => esc_html__( "Custom CSS", $themename ),
@@ -370,11 +335,121 @@ $options = array (
 				"depends_on"    => 'et_should_memory_limit_increase',
 			),
 
-		array( "name" => "general-1",
-			   "type" => "subcontent-end",),
-
-	array(  "name" => "wrap-general",
-			"type" => "contenttab-wrapend",),
+			array(
+			'name' => 'general-1',
+			'type' => 'subcontent-end',
+		),
+		array(
+			'name' => 'general-2',
+			'type' => 'subcontent-start',
+		),
+		array(
+			'name' => esc_html__( 'Dynamic Module Framework', 'Divi' ),
+			'id'   => 'divi_dynamic_module_framework',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'Enable this to allow the Divi Framework to only load the modules that are used on the page, and process the logic for the features in use.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Dynamic CSS', 'Divi' ),
+			'id'   => 'divi_dynamic_css',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'Dynamic CSS greatly reduces CSS file size by dynamically generating only the assets necessary for the features and modules you use. This eliminates all file bloat and greatly improves load times.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Dynamic Icons', 'Divi' ),
+			'id'   => $child_theme_active ? 'divi_dynamic_icons_child_theme' : 'divi_dynamic_icons',
+			'type' => 'checkbox',
+			'std'  => et_dynamic_icons_default_value(),
+			'desc' => esc_html__( 'The Divi icon font is broken up into various subsets. These subsets are loaded only when needed based on the modules and features used on each page. If you need access to the entire icon font on all pages (for example, if you are using our icon font in your child theme), then you can disable this option and load the entire icon font library on all pages.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Load Dynamic Stylesheet In-line', 'Divi' ),
+			'id'   => 'divi_inline_stylesheet',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'This option dequeues the Divi style.css file and prints the contents in-line. This removes a render blocking request and improves the PageSpeed scores of individual pages. However, it also prevents the style.css file from being cached. Since the stylesheet is small, it\'s recommended to keep this option enabled.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Critical CSS', 'Divi' ),
+			'id'   => 'divi_critical_css',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'Critical CSS greatly improves website load times and Google PageSpeed scores by deferring non-critical styles and eliminating render-blocking CSS requests.', 'Divi' ),
+		),
+		array(
+			'name'    => esc_html__( 'Critical Threshold Height', 'Divi' ),
+			'id'      => 'divi_critical_threshold_height',
+			'options' => array( esc_html__( 'Low', 'Divi' ), esc_html__( 'Medium', 'Divi' ), esc_html__( 'High', 'Divi' ) ),
+			'type'    => 'select',
+			'std'     => 'Medium',
+			'desc'    => esc_html__( 'When Critical CSS is enabled, Divi determines an "above the fold threshold" and defers all styles for elements below the fold. However, this threshold is just a estimate and can vary on different devices. Increasing threshold height will deffer fewer styles, resulting in slightly slower load times but less of a chance for Cumulative Layout Shifts to occur. If you are experiencing CLS issues you can increase the threshold height.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Dynamic JavaScript Libraries', 'Divi' ),
+			'id'   => 'divi_dynamic_js_libraries',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'Only load external JavaScript libraries when they are needed by a specific Divi modules on the page. This removes unused JavaScript from the main scripts bundle and improves load times.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Disable WordPress Emojis', 'Divi' ),
+			'id'   => 'divi_disable_emojis',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'WordPress loads it\'s own WordPress emojis. Modern browsers support native emojis, making WordPress\'s emojis unnecessary in most cases. Removing WordPress emojis removes unneeded assets and improves performance.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Defer Gutenberg Block CSS', 'Divi' ),
+			'id'   => 'divi_defer_block_css',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'If a page is built with the Divi Builder, the Gutenberg block CSS file is moved from the header to the footer. Since the file is most likely not used, we can load it later. This removes a render blocking request and improving performance.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Improve Google Fonts Loading', 'Divi' ),
+			'id'   => 'divi_google_fonts_inline',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'Enable caching of Google Fonts and load them inline. This reduces render-blocking requests and improves page load times.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Limit Google Fonts Support For Legacy Browsers', 'Divi' ),
+			'id'   => 'divi_limit_google_fonts_support_for_legacy_browsers',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'Enabling this option will lower the size of Google Fonts and improve load times, however it will limit Google Fonts support in some very old browsers. You can turn this off to increase support for older browsers at a slight cost to performance.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Defer jQuery And jQuery Migrate', 'Divi' ),
+			'id'   => 'divi_enable_jquery_body',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'When possible, jQuery and jQuery Migrate will be moved to the body to speed up load times. If a third party plugin registers jQuery as a dependency, it will be moved back to the head.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Enqueue jQuery Compatibility Script', 'Divi' ),
+			'id'   => 'divi_enable_jquery_compatibility',
+			'type' => 'checkbox',
+			'std'  => 'on',
+			'desc' => esc_html__( 'Some third party scripts may be incorrectly enqueued without declaring jQuery as dependency. If jQuery is deferred, these scripts could break. If you are experiencing console errors after enabling the "Defer jQuery And jQuery Migrate" option, you can enable this option, which will load an additional compatibility script that will attempt to solve the issue. You can turn this feature off if everything is working fine without it.', 'Divi' ),
+		),
+		array(
+			'name' => esc_html__( 'Defer Additional Third Party Scripts', 'Divi' ),
+			'id'   => 'divi_enable_jquery_body_super',
+			'type' => 'checkbox',
+			'std'  => 'off',
+			'desc' => esc_html__( 'Warning: This can cause JavaScript errors in some cases and should be used with care. When enabled, scripts registered by plugins and themes will be deferred to improve performance and jQuery will always be loaded in the body.', 'Divi' ),
+		),
+		array(
+			'name' => 'general-2',
+			'type' => 'subcontent-end',
+		),
+		array(
+			'name' => 'wrap-general',
+			'type' => 'contenttab-wrapend',
+		),
 
 //-------------------------------------------------------------------------------------//
 
@@ -1005,7 +1080,3 @@ $options = array (
 //-------------------------------------------------------------------------------------//
 
 );
-
-// Re-add option-based filter output on theme options loading
-add_filter( 'et_load_unminified_scripts', 'et_divi_load_unminified_scripts' );
-add_filter( 'et_load_unminified_styles', 'et_divi_load_unminified_styles' );
