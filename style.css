@@ -15,9 +15,9 @@ GitHub Theme URI: https://github.com/webbouwer/Divi-White
 http://astronautweb.co/snippet/font-awesome/
 https://divi-magazine.com/using-font-awesome-with-divi/
 */
-
+/
 .et-social-github a.icon::before {
-    font-family: "Font Awesome 5 Free";
+    font-family: "FontAwesome"; /*"Font Awesome 5 Free"; */
     font-weight: 400;
     content: "\f09b"; /* "\f113"; fa-github-alt */
 }
