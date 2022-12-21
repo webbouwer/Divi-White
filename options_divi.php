@@ -150,7 +150,7 @@ $options = array (
 				'is_global'         => true,
 				'main_setting_name' => 'et_google_api_settings',
 				'sub_setting_name'  => 'api_key',
-				"desc"              => et_get_safe_localization( sprintf( __( 'The Maps module uses the Google Maps API and requires a valid Google API Key to function. Before using the map module, please make sure you have added your API key here. Learn more about how to create your Google API Key <a target="_blank" href="%1$s">here</a>.', $themename ), 'http://www.elegantthemes.com/gallery/divi/documentation/map/' ) ),
+				"desc"              => et_get_safe_localization( sprintf( __( 'The Maps module uses the Google Maps API and requires a valid Google API Key to function. Before using the map module, please make sure you have added your API key here. Learn more about how to create your Google API Key <a target="_blank" href="%1$s">here</a>.', $themename ), 'https://www.elegantthemes.com/documentation/divi/map/' ) ),
 			),
 
 			array(
@@ -411,7 +411,7 @@ $options = array (
 			'name' => esc_html__( 'Improve Google Fonts Loading', 'Divi' ),
 			'id'   => 'divi_google_fonts_inline',
 			'type' => 'checkbox',
-			'std'  => 'on',
+			'std'  => 'off',
 			'desc' => esc_html__( 'Enable caching of Google Fonts and load them inline. This reduces render-blocking requests and improves page load times.', 'Divi' ),
 		),
 		array(
@@ -998,7 +998,7 @@ $options = array (
 				'std'               => '',
 				'type'              => 'password',
 				'validation_type'   => 'nohtml',
-				'desc'              => et_get_safe_localization( __( '<em>Before you can receive product updates, you must first authenticate your Elegant Themes subscription. To do this, you need to enter both your Elegant Themes Username and your Elegant Themes API Key into the Updates Tab in your theme and plugin settings. To locate your API Key, <a href="https://www.elegantthemes.com/members-area/api/" target="_blank">log in</a> to your Elegant Themes account and navigate to the <strong>Account > API Key</strong> page. <a href="http://www.elegantthemes.com/gallery/divi/documentation/update/" target="_blank">Learn more here</a></em>. If you still get this message, please make sure that your Username and API Key have been entered correctly', $themename ) ),
+				'desc'              => et_get_safe_localization( __( '<em>Before you can receive product updates, you must first authenticate your Elegant Themes subscription. To do this, you need to enter both your Elegant Themes Username and your Elegant Themes API Key into the Updates Tab in your theme and plugin settings. To locate your API Key, <a href="https://www.elegantthemes.com/members-area/api/" target="_blank">log in</a> to your Elegant Themes account and navigate to the <strong>Account > API Key</strong> page. <a href="https://www.elegantthemes.com/documentation/divi/update-divi/" target="_blank">Learn more here</a></em>. If you still get this message, please make sure that your Username and API Key have been entered correctly', $themename ) ),
 				'is_global'         => true,
 				'main_setting_name' => 'et_automatic_updates_options',
 				'sub_setting_name'  => 'username',
@@ -1010,7 +1010,7 @@ $options = array (
 				'std'             => '',
 				'type'            => 'password',
 				'validation_type' => 'nohtml',
-				'desc'            => et_get_safe_localization( __( '<em>Before you can receive product updates, you must first authenticate your Elegant Themes subscription. To do this, you need to enter both your Elegant Themes Username and your Elegant Themes API Key into the Updates Tab in your theme and plugin settings. To locate your API Key, <a href="https://www.elegantthemes.com/members-area/api/" target="_blank">log in</a> to your Elegant Themes account and navigate to the <strong>Account > API Key</strong> page. <a href="http://www.elegantthemes.com/gallery/divi/documentation/update/" target="_blank">Learn more here</a></em>. If you still get this message, please make sure that your Username and API Key have been entered correctly', $themename ) ),
+				'desc'            => et_get_safe_localization( __( '<em>Before you can receive product updates, you must first authenticate your Elegant Themes subscription. To do this, you need to enter both your Elegant Themes Username and your Elegant Themes API Key into the Updates Tab in your theme and plugin settings. To locate your API Key, <a href="https://www.elegantthemes.com/members-area/api/" target="_blank">log in</a> to your Elegant Themes account and navigate to the <strong>Account > API Key</strong> page. <a href="https://www.elegantthemes.com/documentation/divi/update-divi/" target="_blank">Learn more here</a></em>. If you still get this message, please make sure that your Username and API Key have been entered correctly', $themename ) ),
 				'is_global'         => true,
 				'main_setting_name' => 'et_automatic_updates_options',
 				'sub_setting_name'  => 'api_key',

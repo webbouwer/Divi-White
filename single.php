@@ -141,8 +141,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						echo '<div class="et-single-post-ad">';
 						if ( et_get_option('divi_468_adsense') !== '' ) echo et_core_intentionally_unescaped( et_core_fix_unclosed_html_tags( et_get_option('divi_468_adsense') ), 'html' );
 						else { ?>
-							<a href="<?php echo esc_url(et_get_option('divi_468_url')); ?>"><img src="<?php echo esc_attr(et_get_option('divi_468_image')); ?>" alt="468" class="foursixeight" /></a>
-				<?php 	}
+							<a href="<?php echo esc_url( strval( et_get_option( 'divi_468_url' ) ) ); ?>"><img src="<?php echo esc_attr( et_get_option( 'divi_468_image' ) ); ?>" alt="468" class="foursixeight" /></a>
+					<?php 	}
 						echo '</div>';
 					}
 
@@ -161,7 +161,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				</article>
 
 			<?php endwhile; ?>
-			</div> 
+			</div>
 
 			<?php get_sidebar(); ?>
 		</div>
